@@ -350,3 +350,20 @@ Until the reference library expands, prioritize these files when present:
 6. `references/builders/python-builder.md`
 
 Then use any other relevant reference under `references/` that better matches the task.
+
+---
+
+## 14. Multi-runtime portability
+
+This repository is designed to run cleanly across several AI runtimes. The canonical routing logic lives once in `AGENTS.md` and `SKILL.md`. Each runtime gets a thin adapter, not a duplicated copy.
+
+| Runtime | Entry point | Adapter | Notes |
+|---|---|---|---|
+| Codex CLI | `AGENTS.md` | - | Native, no adapter needed. |
+| Claude Code | `CLAUDE.md` imports `@AGENTS.md` | `CLAUDE.md`, `.claude/skills/ai-builder/SKILL.md`, `.claude/commands/ai-builder.md` | Skill and slash command for native invocation. |
+| Claude Web Skills | `SKILL.md` bundle | Upload via claude.ai Skills UI | Use `scripts/build_skill_bundle.py` to produce `dist/ai-builder.zip`. |
+| Gemini CLI | `GEMINI.md` imports `@./AGENTS.md` | `GEMINI.md`, `.gemini/settings.example.json` | `context.fileName` includes `AGENTS.md`. |
+| ChatGPT (Custom GPT / Apps SDK) | `agents/openai.yaml` + `SKILL.md` | `dist/chatgpt-custom-gpt.md` paste-ready instructions | See `references/platforms/chatgpt.md`. |
+| Antigravity (Google) | `AGENTS.md` + `.antigravity/` | `ANTIGRAVITY.md`, `.antigravity/rules/ai-builder.md`, `.antigravity/commands/ai-builder.md` | See `references/platforms/antigravity.md`. |
+
+When a runtime is unlisted, fall back to the generic contract: read `SKILL.md`, load only the references needed for the current task, respect the safety baseline.

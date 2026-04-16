@@ -9,7 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = [
     ROOT / ".claude" / "settings.example.json",
     ROOT / ".gemini" / "settings.example.json",
+    ROOT / ".antigravity" / "settings.example.json",
+    ROOT / ".antigravity" / "rules" / "ai-builder.md",
+    ROOT / ".antigravity" / "commands" / "ai-builder.md",
     ROOT / "AGENTS.md",
+    ROOT / "ANTIGRAVITY.md",
     ROOT / "CHANGELOG.md",
     ROOT / "CLAUDE.md",
     ROOT / "CLAUDE.local.example.md",
@@ -29,12 +33,17 @@ REQUIRED_FILES = [
     ROOT / "references" / "builders" / "python-builder.md",
     ROOT / "references" / "builders" / "security-builder.md",
     ROOT / "references" / "builders" / "vba-builder.md",
+    ROOT / "references" / "platforms" / "antigravity.md",
+    ROOT / "references" / "platforms" / "chatgpt.md",
     ROOT / "references" / "platforms" / "claude-code-hooks.md",
     ROOT / "references" / "platforms" / "claude-code.md",
+    ROOT / "references" / "platforms" / "claude-web.md",
     ROOT / "references" / "platforms" / "codex-claude-gemini-crosswalk.md",
     ROOT / "references" / "platforms" / "codex-task-shaping.md",
     ROOT / "references" / "platforms" / "codex.md",
     ROOT / "references" / "platforms" / "gemini-cli.md",
+    ROOT / "scripts" / "build_skill_bundle.py",
+    ROOT / "dist" / "chatgpt-custom-gpt.md",
     ROOT / "references" / "rules" / "output-and-safety.md",
     ROOT / "references" / "rules" / "security-baseline.md",
     ROOT / "references" / "rules" / "risk-trigger-matrix.md",
@@ -52,12 +61,15 @@ MARKDOWN_FILES = [
     ROOT / "CHANGELOG.md",
     ROOT / "SKILL.md",
     ROOT / "AGENTS.md",
+    ROOT / "ANTIGRAVITY.md",
     ROOT / "CLAUDE.md",
     ROOT / "CLAUDE.local.example.md",
     ROOT / "GEMINI.md",
     ROOT / "GEMINI.local.example.md",
     *ROOT.glob("references/**/*.md"),
     *ROOT.glob("examples/**/*.md"),
+    *ROOT.glob(".antigravity/**/*.md"),
+    *ROOT.glob("dist/**/*.md"),
 ]
 
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
@@ -76,12 +88,35 @@ def check_required_files() -> None:
         fail(f"Missing required files: {', '.join(missing)}")
 
 
+NAME_RE = re.compile(r"^name:\s*([a-z0-9-]+)\s*$", re.MULTILINE)
+DESC_RE = re.compile(r"^description:\s*(.+?)\s*$", re.MULTILINE | re.DOTALL)
+
+
 def check_skill_frontmatter() -> None:
     content = (ROOT / "SKILL.md").read_text(encoding="utf-8")
     if not content.startswith("---\n"):
         fail("SKILL.md must start with YAML frontmatter.")
-    if "\nname:" not in content or "\ndescription:" not in content:
-        fail("SKILL.md frontmatter must include name and description.")
+    end = content.find("\n---", 4)
+    if end == -1:
+        fail("SKILL.md frontmatter must be closed with '---'.")
+    frontmatter = content[4:end]
+
+    name_match = NAME_RE.search(frontmatter)
+    if not name_match:
+        fail("SKILL.md frontmatter must include a 'name:' field matching [a-z0-9-]+.")
+    name = name_match.group(1)
+    if len(name) > 64:
+        fail(f"SKILL.md frontmatter name is too long ({len(name)} chars, max 64).")
+
+    desc_match = DESC_RE.search(frontmatter)
+    if not desc_match:
+        fail("SKILL.md frontmatter must include a 'description:' field.")
+    description = desc_match.group(1).strip()
+    if len(description) > 1024:
+        fail(
+            f"SKILL.md frontmatter description is too long "
+            f"({len(description)} chars, max 1024 for claude.ai Skills)."
+        )
 
 
 def check_openai_yaml() -> None:
@@ -120,7 +155,7 @@ def check_links() -> None:
 
 
 def check_context_imports() -> None:
-    for context_file in (ROOT / "CLAUDE.md", ROOT / "GEMINI.md"):
+    for context_file in (ROOT / "CLAUDE.md", ROOT / "GEMINI.md", ROOT / "ANTIGRAVITY.md"):
         content = context_file.read_text(encoding="utf-8")
         for match in AT_INCLUDE_RE.findall(content):
             candidate = normalize_target(context_file, match)

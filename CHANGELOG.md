@@ -8,6 +8,25 @@ The format is inspired by Keep a Changelog and the version labels in this file a
 
 - No unreleased changes yet.
 
+## [0.3.0] - 2026-04-16
+
+### Added
+
+- Antigravity adapter: `ANTIGRAVITY.md` root file, `.antigravity/rules/ai-builder.md`, `.antigravity/commands/ai-builder.md`, `.antigravity/settings.example.json`
+- ChatGPT adapter: `references/platforms/chatgpt.md`, `dist/chatgpt-custom-gpt.md` paste-ready system prompt, enriched `agents/openai.yaml` (instructions, starter prompts, capabilities, safety posture)
+- Claude Web Skills adapter: `references/platforms/claude-web.md`, `scripts/build_skill_bundle.py` producing `dist/ai-builder.zip`
+- Claude Code native skill under `.claude/skills/ai-builder/SKILL.md` and slash command `.claude/commands/ai-builder.md`
+- Multi-runtime crosswalk rewritten to cover Codex CLI, Claude Code, Claude Web, ChatGPT, Gemini CLI, and Antigravity
+- Platform-aware routing evaluation cases in `eval/routing-cases.json`
+- Frontmatter limit checks in `scripts/validate_repo.py` (name length, description length for claude.ai Skills)
+
+### Changed
+
+- `SKILL.md` description broadened from Codex-specific to agent-generic
+- `SKILL.md` now explicitly names `AGENTS.md` and `SKILL.md` as paired canonical sources for repo-native and skill-format runtimes
+- `AGENTS.md` gained a multi-runtime portability table
+- `scripts/check_eval_cases.py` now requires a `platform` field and validates it against an allowlist
+
 ## [0.2.0] - 2026-04-16
 
 ### Added
@@ -38,6 +57,7 @@ The format is inspired by Keep a Changelog and the version labels in this file a
 - Routing evaluation fixtures, repository validation scripts, and GitHub Actions CI
 - OpenAI-facing metadata in `agents/openai.yaml`
 
-[Unreleased]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.2.0...main
+[Unreleased]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.3.0...main
+[0.3.0]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/StealthyLabsHQ/ai-builder-skill/releases/tag/v0.1.0

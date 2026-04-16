@@ -1,4 +1,41 @@
+name: ai-builder
+version: 0.3.0
 interface:
   display_name: "AI Builder"
   short_description: "Business automation and secure scripting workflows"
+  long_description: >-
+    Routing-first skill for practical office automation, Windows scripting,
+    lightweight browser tools, data pipelines, and security-hardening requests.
+    Picks VBA, PowerShell, Python, or HTML/CSS/JavaScript based on the actual
+    business task, environment, and risk profile.
   default_prompt: "Use $ai-builder to choose the smallest viable implementation for this automation request."
+  starter_prompts:
+    - "Clean this workbook, remove blank rows, and highlight duplicate invoice IDs."
+    - "Rename all PDFs in this Windows folder using the date in each filename."
+    - "Merge these CSV exports and generate a report that opens cleanly in Excel."
+    - "Build a plain HTML/CSS/JavaScript dashboard for weekly sales KPIs."
+    - "Review this PowerShell script for dangerous patterns and harden it before production."
+capabilities:
+  - office-automation
+  - windows-scripting
+  - data-pipelines
+  - browser-tools
+  - security-hardening
+instructions_file: "../dist/chatgpt-custom-gpt.md"
+knowledge_files:
+  - "../SKILL.md"
+  - "../AGENTS.md"
+  - "../references/rules/output-and-safety.md"
+  - "../references/rules/security-baseline.md"
+  - "../references/rules/risk-trigger-matrix.md"
+  - "../references/builders/office-script-builder.md"
+  - "../references/builders/html-css-javascript-builder.md"
+  - "../references/builders/vba-builder.md"
+  - "../references/builders/powershell-builder.md"
+  - "../references/builders/python-builder.md"
+  - "../references/builders/security-builder.md"
+safety:
+  dry_run_preferred: true
+  confirm_destructive_actions: true
+  prohibit_secret_exfiltration: true
+  require_validation_step: true

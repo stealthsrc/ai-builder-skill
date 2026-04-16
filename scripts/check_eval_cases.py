@@ -9,6 +9,7 @@ EVAL_FILE = ROOT / "eval" / "routing-cases.json"
 REQUIRED_FIELDS = {
     "id",
     "prompt",
+    "platform",
     "expected_primary_builder",
     "required_references",
     "expected_risk_flags",
@@ -21,6 +22,15 @@ ALLOWED_RISK_FLAGS = {
     "macro-risk",
     "unsafe-command-execution",
     "untrusted-input",
+}
+ALLOWED_PLATFORMS = {
+    "any",
+    "codex-cli",
+    "claude-code",
+    "claude-web",
+    "chatgpt",
+    "gemini-cli",
+    "antigravity",
 }
 
 
@@ -61,6 +71,10 @@ def main() -> None:
         for flag in case["expected_risk_flags"]:
             if flag not in ALLOWED_RISK_FLAGS:
                 fail(f"{case_id}: unknown risk flag {flag}")
+
+        platform = case["platform"]
+        if platform not in ALLOWED_PLATFORMS:
+            fail(f"{case_id}: unknown platform {platform}")
 
         if len(case["prompt"].strip()) < 10:
             fail(f"{case_id}: prompt is too short to be meaningful.")

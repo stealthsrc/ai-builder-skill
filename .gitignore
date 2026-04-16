@@ -17,9 +17,14 @@ tmp/
 .codex/
 .claude/*
 !.claude/settings.example.json
+!.claude/skills/
+!.claude/commands/
 .cursor/
 .gemini/*
 !.gemini/settings.example.json
+
+# Build output (keep paste-ready docs, drop binary archives)
+dist/*.zip
 
 # Python cache
 __pycache__/

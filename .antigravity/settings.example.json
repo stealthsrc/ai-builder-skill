@@ -1,0 +1,32 @@
+{
+  "context": {
+    "fileName": ["AGENTS.md", "ANTIGRAVITY.md"],
+    "respectGitIgnore": true
+  },
+  "approval": {
+    "defaultMode": "plan",
+    "autoApprove": false,
+    "requireApprovalFor": [
+      "shell:rm*",
+      "shell:Remove-Item*",
+      "shell:Invoke-Expression*",
+      "shell:iex*",
+      "shell:Invoke-WebRequest*",
+      "shell:curl*",
+      "shell:wget*",
+      "network:outbound",
+      "file:write-outside-workspace",
+      "file:bulk-rename",
+      "email:send"
+    ]
+  },
+  "workspace": {
+    "trusted": false
+  },
+  "skills": {
+    "enabled": true
+  },
+  "mcp": {
+    "requireExplicitTrust": true
+  }
+}

@@ -206,6 +206,26 @@ Use the repository in the simplest way your AI tool supports:
 - use [GEMINI.local.example.md](GEMINI.local.example.md) as a personal overlay to import from your global or project `GEMINI.md`
 - keep `references/` available so Gemini can load only the relevant builder, rule, or platform reference
 
+### Antigravity (Google)
+
+- use [ANTIGRAVITY.md](ANTIGRAVITY.md) as the thin Antigravity adapter (imports `AGENTS.md`)
+- keep [.antigravity/rules/ai-builder.md](.antigravity/rules/ai-builder.md) as the scoped rule that points agents at `SKILL.md`
+- expose [.antigravity/commands/ai-builder.md](.antigravity/commands/ai-builder.md) as the `/ai-builder` slash command
+- copy [.antigravity/settings.example.json](.antigravity/settings.example.json) to `.antigravity/settings.json` for a conservative approval baseline
+
+### ChatGPT (Custom GPT, Projects, Apps SDK)
+
+- paste [dist/chatgpt-custom-gpt.md](dist/chatgpt-custom-gpt.md) into a Custom GPT's Instructions field or a ChatGPT Project system prompt
+- attach the knowledge files listed at the top of that file
+- use [agents/openai.yaml](agents/openai.yaml) as the distribution manifest when targeting the OpenAI Apps SDK or Agents SDK
+- see [references/platforms/chatgpt.md](references/platforms/chatgpt.md) for the full deployment guide
+
+### Claude Web Skills (claude.ai)
+
+- run `python scripts/build_skill_bundle.py` to produce `dist/ai-builder.zip`
+- upload that zip to `claude.ai` → Skills
+- see [references/platforms/claude-web.md](references/platforms/claude-web.md) for packaging, limits, and safety notes
+
 ### Cursor or editor-agent workflows
 
 - use the repository as project context or copy the relevant files into your workspace rules setup
@@ -234,7 +254,10 @@ The repository now includes agent-specific adaptation references:
 - [references/platforms/codex-task-shaping.md](references/platforms/codex-task-shaping.md)
 - [references/platforms/claude-code.md](references/platforms/claude-code.md)
 - [references/platforms/claude-code-hooks.md](references/platforms/claude-code-hooks.md)
+- [references/platforms/claude-web.md](references/platforms/claude-web.md)
+- [references/platforms/chatgpt.md](references/platforms/chatgpt.md)
 - [references/platforms/gemini-cli.md](references/platforms/gemini-cli.md)
+- [references/platforms/antigravity.md](references/platforms/antigravity.md)
 - [references/platforms/codex-claude-gemini-crosswalk.md](references/platforms/codex-claude-gemini-crosswalk.md)
 
 Use them when the target runtime matters as much as the programming language.
@@ -243,10 +266,19 @@ The repository also ships ready-to-use root adapters:
 
 - [CLAUDE.md](CLAUDE.md)
 - [GEMINI.md](GEMINI.md)
+- [ANTIGRAVITY.md](ANTIGRAVITY.md)
 - [CLAUDE.local.example.md](CLAUDE.local.example.md)
 - [GEMINI.local.example.md](GEMINI.local.example.md)
 - [.claude/settings.example.json](.claude/settings.example.json)
+- [.claude/skills/ai-builder/SKILL.md](.claude/skills/ai-builder/SKILL.md)
+- [.claude/commands/ai-builder.md](.claude/commands/ai-builder.md)
 - [.gemini/settings.example.json](.gemini/settings.example.json)
+- [.antigravity/settings.example.json](.antigravity/settings.example.json)
+- [.antigravity/rules/ai-builder.md](.antigravity/rules/ai-builder.md)
+- [.antigravity/commands/ai-builder.md](.antigravity/commands/ai-builder.md)
+- [agents/openai.yaml](agents/openai.yaml)
+- [dist/chatgpt-custom-gpt.md](dist/chatgpt-custom-gpt.md)
+- [scripts/build_skill_bundle.py](scripts/build_skill_bundle.py)
 
 ## Examples And Starters
 

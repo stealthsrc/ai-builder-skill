@@ -2,6 +2,7 @@
   {
     "id": "excel-cleanup-vba",
     "prompt": "Clean this workbook, remove blank rows, trim invoice IDs, and highlight duplicate invoice numbers.",
+    "platform": "any",
     "expected_primary_builder": "references/builders/vba-builder.md",
     "required_references": [
       "references/builders/office-script-builder.md"
@@ -12,6 +13,7 @@
   {
     "id": "windows-rename-powershell",
     "prompt": "Use PowerShell on Windows to rename all PDFs in this folder using the date in each filename.",
+    "platform": "any",
     "expected_primary_builder": "references/builders/powershell-builder.md",
     "required_references": [
       "references/builders/office-script-builder.md",
@@ -25,6 +27,7 @@
   {
     "id": "csv-report-python",
     "prompt": "Merge these CSV exports and generate a report that opens cleanly in Excel.",
+    "platform": "any",
     "expected_primary_builder": "references/builders/python-builder.md",
     "required_references": [
       "references/builders/office-script-builder.md"
@@ -35,6 +38,7 @@
   {
     "id": "browser-dashboard-plain-web",
     "prompt": "Build a plain HTML/CSS/JavaScript internal dashboard, no framework, mobile-friendly.",
+    "platform": "any",
     "expected_primary_builder": "references/builders/html-css-javascript-builder.md",
     "required_references": [],
     "expected_risk_flags": [],
@@ -43,6 +47,7 @@
   {
     "id": "macro-hardening",
     "prompt": "Fix this existing VBA macro and make it safer before it sends Outlook emails.",
+    "platform": "any",
     "expected_primary_builder": "references/builders/security-builder.md",
     "required_references": [
       "references/builders/vba-builder.md",
@@ -57,6 +62,7 @@
   {
     "id": "powershell-hardening",
     "prompt": "Review this PowerShell script for dangerous patterns and harden it before it touches production files.",
+    "platform": "any",
     "expected_primary_builder": "references/builders/security-builder.md",
     "required_references": [
       "references/builders/powershell-builder.md",
@@ -71,6 +77,7 @@
   {
     "id": "browser-form-with-sensitive-input",
     "prompt": "Create a browser-based form where staff can paste client rows and export a cleaned CSV.",
+    "platform": "any",
     "expected_primary_builder": "references/builders/html-css-javascript-builder.md",
     "required_references": [
       "references/rules/security-baseline.md"
@@ -83,11 +90,89 @@
   {
     "id": "ambiguous-finance-workflow",
     "prompt": "Automate this weekly finance reporting workflow for me. Inputs are CSV exports and the result should be reusable next month.",
+    "platform": "any",
     "expected_primary_builder": "references/builders/python-builder.md",
     "required_references": [
       "references/builders/office-script-builder.md"
     ],
     "expected_risk_flags": [],
     "notes": "Ambiguous request should still route toward maintainable data processing."
+  },
+  {
+    "id": "claude-code-slash-invocation",
+    "prompt": "/ai-builder rename a batch of exported PDFs on my Windows machine",
+    "platform": "claude-code",
+    "expected_primary_builder": "references/builders/powershell-builder.md",
+    "required_references": [
+      "references/rules/security-baseline.md",
+      "references/platforms/claude-code.md"
+    ],
+    "expected_risk_flags": [
+      "bulk-file-rename"
+    ],
+    "notes": "Slash command entry point must still route through SKILL.md."
+  },
+  {
+    "id": "claude-web-no-execution-surface",
+    "prompt": "Help me build a VBA macro to clean invoice data — I'm on claude.ai.",
+    "platform": "claude-web",
+    "expected_primary_builder": "references/builders/vba-builder.md",
+    "required_references": [
+      "references/platforms/claude-web.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "No execution surface; response must be copy-paste-ready for the user to run locally."
+  },
+  {
+    "id": "chatgpt-custom-gpt-session",
+    "prompt": "I'm using the AI Builder Custom GPT. Merge these CSVs into one Excel report.",
+    "platform": "chatgpt",
+    "expected_primary_builder": "references/builders/python-builder.md",
+    "required_references": [
+      "references/platforms/chatgpt.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "ChatGPT cannot execute; must deliver code plus run instructions."
+  },
+  {
+    "id": "gemini-cli-sandboxed-run",
+    "prompt": "In Gemini CLI with sandbox on, write a PowerShell script to archive last month's reports.",
+    "platform": "gemini-cli",
+    "expected_primary_builder": "references/builders/powershell-builder.md",
+    "required_references": [
+      "references/rules/security-baseline.md",
+      "references/platforms/gemini-cli.md"
+    ],
+    "expected_risk_flags": [
+      "destructive-file-op"
+    ],
+    "notes": "Respect sandbox expectations and approval-mode defaults."
+  },
+  {
+    "id": "antigravity-manager-agent",
+    "prompt": "In Antigravity, orchestrate a cleanup of an Excel workbook and output the cleaned copy.",
+    "platform": "antigravity",
+    "expected_primary_builder": "references/builders/vba-builder.md",
+    "required_references": [
+      "references/platforms/antigravity.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Manager-agent run still routes through SKILL.md before delegating to a subagent."
+  },
+  {
+    "id": "codex-cli-task-shape",
+    "prompt": "Use $ai-builder to harden this PowerShell script before it renames production files.",
+    "platform": "codex-cli",
+    "expected_primary_builder": "references/builders/security-builder.md",
+    "required_references": [
+      "references/builders/powershell-builder.md",
+      "references/rules/security-baseline.md",
+      "references/platforms/codex-task-shaping.md"
+    ],
+    "expected_risk_flags": [
+      "destructive-file-op",
+      "unsafe-command-execution"
+    ],
+    "notes": "Codex task-shaping should surface validation steps alongside the hardened script."
   }
 ]

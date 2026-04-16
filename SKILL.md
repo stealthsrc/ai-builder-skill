@@ -1,11 +1,20 @@
 ---
 name: ai-builder
-description: Route practical office, Windows automation, lightweight browser tools, business scripting, and security-hardening requests to the right implementation approach. Use when Codex needs to build, maintain, review, or harden Excel, Word, or Outlook macros, Windows file or system automation, HTML/CSS/JavaScript utilities, CSV or Excel report pipelines, or similar admin and no-code workflows where VBA, PowerShell, Python, or plain web stack should be chosen pragmatically and safely.
+description: Route practical office, Windows automation, lightweight browser tools, business scripting, and security-hardening requests to the right implementation approach. Use when an AI agent needs to build, maintain, review, or harden Excel, Word, or Outlook macros, Windows file or system automation, HTML/CSS/JavaScript utilities, CSV or Excel report pipelines, or similar admin and no-code workflows where VBA, PowerShell, Python, or plain web stack should be chosen pragmatically and safely.
 ---
 
 # AI Builder
 
 Use this skill as a hub for business automation requests that need a practical implementation, not architecture work.
+
+## Canonical Source
+
+This skill exists in two equivalent entry points for different runtimes:
+
+- `AGENTS.md` is the canonical repo-native instruction file for Codex CLI, Gemini CLI (via `context.fileName`), Antigravity, and any harness that reads `AGENTS.md`.
+- `SKILL.md` (this file) is the canonical skill-format entry point for Claude Code skills, Claude Web skills, ChatGPT Apps / Custom GPT, and any harness that loads packaged skills.
+
+Both entry points route to the same references under `references/`. Thin platform adapters (`CLAUDE.md`, `GEMINI.md`, `ANTIGRAVITY.md`) import `AGENTS.md` so the routing stays single-sourced.
 
 ## Start Here
 
