@@ -78,6 +78,7 @@ Gemini CLI documents sandboxing directly, including:
 - add a `GEMINI.md` wrapper if you want first-class Gemini ergonomics
 - or configure `context.fileName` to include `AGENTS.md`
 - use `.gemini/settings.example.json` as the starting point for a workspace `.gemini/settings.json`
+- use `GEMINI.local.example.md` as a personal overlay template that you import from `~/.gemini/GEMINI.md` or the project `GEMINI.md`
 - prefer trusted folders when you need project-level commands or settings
 - prefer sandboxed runs for unfamiliar or risky repositories
 - keep local Gemini settings conservative for file writes and tool execution

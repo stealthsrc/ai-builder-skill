@@ -31,6 +31,8 @@ node_modules/
 # Secrets and local config
 .env
 .env.*
+CLAUDE.local.md
+GEMINI.local.md
 *.secret
 *.secrets
 *.key
