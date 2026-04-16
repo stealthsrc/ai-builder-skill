@@ -1,0 +1,102 @@
+<svg width="1440" height="420" viewBox="0 0 1440 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1440" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F3E8"/>
+      <stop offset="1" stop-color="#E7F0EE"/>
+    </linearGradient>
+    <radialGradient id="coral" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1148 88) rotate(132.91) scale(325.201 214.441)">
+      <stop stop-color="#F5A272" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#F5A272" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="teal" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(228 365) rotate(-24.216) scale(409.842 214.114)">
+      <stop stop-color="#1F766C" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#1F766C" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="762" y="48" width="558" height="310" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="14"/>
+      <feGaussianBlur stdDeviation="16"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.102 0 0 0 0 0.149 0 0 0 0 0.169 0 0 0 0.12 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1392" height="372" rx="24" stroke="#D7D0C2"/>
+  <rect x="56" y="56" width="1328" height="308" rx="18" stroke="#E6DED1" stroke-dasharray="7 10"/>
+  <circle cx="1212" cy="86" r="174" fill="url(#coral)"/>
+  <circle cx="216" cy="362" r="176" fill="url(#teal)"/>
+
+  <text x="104" y="132" fill="#16333B" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="700">
+    AI Builder
+  </text>
+  <text x="104" y="178" fill="#4E5C63" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="24">
+    Practical automation routing for business work, not framework theater.
+  </text>
+  <text x="104" y="220" fill="#5F6D73" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">
+    Office macros, Windows scripts, browser tools, data pipelines,
+  </text>
+  <text x="104" y="248" fill="#5F6D73" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="20">
+    and security-aware workflows guided by the smallest viable solution.
+  </text>
+
+  <rect x="104" y="286" width="168" height="38" rx="19" fill="#16333B"/>
+  <text x="132" y="310" fill="#F7F3E8" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="15" font-weight="700">
+    Office Automation
+  </text>
+  <rect x="284" y="286" width="156" height="38" rx="19" fill="#1F766C"/>
+  <text x="314" y="310" fill="#F6FBFA" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="15" font-weight="700">
+    Windows Scripting
+  </text>
+  <rect x="452" y="286" width="170" height="38" rx="19" fill="#E28B54"/>
+  <text x="489" y="310" fill="#FFF8F4" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="15" font-weight="700">
+    Security Baseline
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect x="794" y="80" width="494" height="246" rx="24" fill="#FEFCF7"/>
+    <rect x="814" y="100" width="454" height="38" rx="12" fill="#F2ECE1"/>
+    <circle cx="840" cy="119" r="6" fill="#E28B54"/>
+    <circle cx="860" cy="119" r="6" fill="#1F766C"/>
+    <circle cx="880" cy="119" r="6" fill="#16333B"/>
+    <text x="912" y="124" fill="#556268" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="15">
+      choose_builder(request)
+    </text>
+
+    <rect x="830" y="160" width="186" height="56" rx="18" fill="#16333B"/>
+    <text x="858" y="184" fill="#F7F3E8" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="14" font-weight="700">
+      HTML / CSS / JavaScript
+    </text>
+    <text x="858" y="202" fill="#D5E5E1" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="12">
+      browser tools and static UI
+    </text>
+
+    <rect x="1036" y="160" width="98" height="56" rx="18" fill="#1F766C"/>
+    <text x="1070" y="192" fill="#F5FAF8" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="18" font-weight="700">
+      VBA
+    </text>
+
+    <rect x="1150" y="160" width="98" height="56" rx="18" fill="#E28B54"/>
+    <text x="1168" y="192" fill="#FFF8F4" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="16" font-weight="700">
+      Python
+    </text>
+
+    <rect x="830" y="232" width="210" height="56" rx="18" fill="#E8F1EF"/>
+    <text x="858" y="256" fill="#1B4D46" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="15" font-weight="700">
+      PowerShell
+    </text>
+    <text x="858" y="274" fill="#4A6A64" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="12">
+      file ops, COM, Windows native
+    </text>
+
+    <rect x="1054" y="232" width="194" height="56" rx="18" fill="#F8E6DB"/>
+    <text x="1084" y="256" fill="#8C4C22" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="15" font-weight="700">
+      Security Builder
+    </text>
+    <text x="1084" y="274" fill="#A15D32" font-family="'Trebuchet MS', Verdana, sans-serif" font-size="12">
+      secrets, paths, risky actions
+    </text>
+  </g>
+</svg>

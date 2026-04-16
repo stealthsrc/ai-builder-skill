@@ -1,8 +1,22 @@
-# AI Builder
+<p align="center">
+  <img src="assets/ai-builder-banner.svg" alt="AI Builder banner" width="100%">
+</p>
 
-> A practical skill hub for Office automation, Windows scripting, lightweight business tooling, and security-aware workflow generation.
+<p align="center">
+  <a href="https://github.com/StealthyLabsHQ/ai-builder-skill/blob/main/LICENSE"><img src="https://img.shields.io/github/license/StealthyLabsHQ/ai-builder-skill?style=flat-square" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/routing-VBA%20%7C%20PowerShell%20%7C%20Python%20%7C%20HTML%2FCSS%2FJS-16333B?style=flat-square" alt="Routing badge">
+  <img src="https://img.shields.io/badge/focus-business%20automation%20%2B%20security-1F766C?style=flat-square" alt="Focus badge">
+</p>
 
-AI Builder helps route real-world automation requests to the right implementation path:
+<p align="center">
+  A practical skill hub for Office automation, Windows scripting, lightweight browser tools, data workflows, and security-aware code generation.
+</p>
+
+## What AI Builder Is
+
+AI Builder is a routing-first skill repository for practical automation work.
+
+It helps an AI assistant choose the right implementation path before code is written:
 
 - `HTML/CSS/JavaScript` for lightweight browser tools and static frontends
 - `VBA` for Office desktop macros and workbook logic
@@ -10,44 +24,23 @@ AI Builder helps route real-world automation requests to the right implementatio
 - `Python` for data pipelines, reporting, and maintainable scripting
 - `Security-first guidance` for risky or high-impact automation
 
-It is built for people who live close to Excel, folders, reports, admin workflows, and internal business operations, not just full-time software engineers.
+This repository is optimized for real operating work:
 
----
+- Excel cleanup and workbook automation
+- Windows file and folder tasks
+- internal dashboards and browser tools
+- report generation from CSV or export data
+- safer handling of secrets, paths, commands, and destructive actions
 
-## Why This Exists
+## Why It Exists
 
-Most automation requests are not framework problems. They are practical work problems:
+Most internal automation requests do not need an app framework.
 
-- clean and reformat a workbook
-- rename or move batches of files
-- merge CSV exports into a report
-- automate an Office task without overengineering it
-- harden a script before it touches files, secrets, or production data
+They need the smallest viable implementation that fits the user's actual environment, setup burden, and skill level. AI Builder exists to make those requests routable, consistent, and safer by default.
 
-This skill exists to make those requests routable, consistent, and safe.
-
-Instead of treating every task like a generic coding problem, AI Builder chooses the smallest viable implementation for the user's environment and technical level.
-
----
-
-## What The Skill Does
-
-AI Builder acts as a hub-and-references skill:
-
-| Area | What it helps with |
-|---|---|
-| Lightweight frontend build | HTML, CSS, JavaScript dashboards, forms, calculators, static internal tools |
-| Office automation | Excel, Word, Outlook macros, worksheet logic, workbook events, buttons, forms |
-| Windows operations | File and folder automation, COM scripting, scheduled tasks, admin-heavy workflows |
-| Data processing | CSV merges, Excel reporting, ETL-style scripts, structured transformations |
-| Safer automation | Secret handling, destructive action awareness, bounded paths, safer command execution |
-| Audience adaptation | Copy-paste-ready guidance for non-developers, concise structure for technical users |
-
----
+It is especially useful when the person asking for help is close to spreadsheets, reports, folders, exports, and internal business processes rather than full-time software engineering.
 
 ## Routing Model
-
-The skill uses a simple routing model:
 
 | Request type | Default route |
 |---|---|
@@ -56,76 +49,37 @@ The skill uses a simple routing model:
 | Windows-native automation or operational scripting | `references/builders/powershell-builder.md` |
 | Cross-file data processing or maintainable automation | `references/builders/python-builder.md` |
 | Hardening, audit, risky automation, secrets, or high-impact operations | `references/builders/security-builder.md` |
-| No-code / admin / office-heavy request with no explicit language | `references/builders/office-script-builder.md` first |
+| No-code, admin, or office-heavy request with no explicit language | `references/builders/office-script-builder.md` first |
 
-If the user does not specify a language, AI Builder chooses the safest practical option with the lowest setup burden.
+If the request is ambiguous, the skill should choose the safest practical option with the lowest setup burden.
 
----
+## What Makes It Different
 
-## Security Is Built In
+### 1. Routing before coding
 
-This is not just a code-routing skill.
+The main job is not to generate code blindly. The main job is to pick the right execution path first.
 
-AI Builder includes a shared security baseline for tasks that involve:
+### 2. Built for practical users
 
-- credentials, API keys, tokens, or signed URLs
-- file overwrite, deletion, rename, or move operations
-- command execution and external process launching
-- downloads, web requests, webhooks, and external content
-- Office COM automation, email, exports, or PII-bearing workflows
-- AI-assisted or agent-driven automation that could act on untrusted input
+The output model is designed for people who need copy-paste-ready automation with clear run instructions, not architecture lectures.
 
-The security layer is intentionally pragmatic:
+### 3. Security is part of the workflow
 
-- prefer new output files over silent in-place changes
-- avoid hardcoded secrets
-- bound paths before touching the filesystem
-- avoid unsafe language-specific patterns
-- explain validation, rollback, and blast radius clearly
+The repository includes a shared security baseline for tasks involving:
 
-The current security guidance was shaped with help from the excellent `StealthyLabsHQ/security-hardening` corpus and adapted to this repository's narrower business-automation scope.
+- secrets, credentials, tokens, or signed URLs
+- downloads, web requests, and external content
+- command execution and external processes
+- file overwrite, deletion, move, or rename operations
+- Office automation, email, exports, and PII-bearing flows
+- AI-assisted or agent-driven automation with untrusted input
 
----
+The security guidance is intentionally pragmatic and adapted from the excellent `StealthyLabsHQ/security-hardening` corpus to fit this narrower business-automation scope.
 
-## Repository Layout
+## Example Requests
 
 ```text
-.
-|-- SKILL.md
-|-- AGENTS.md
-|-- LICENSE
-|-- README.md
-`-- references/
-    |-- builders/
-    |   |-- html-css-javascript-builder.md
-    |   |-- office-script-builder.md
-    |   |-- security-builder.md
-    |   |-- powershell-builder.md
-    |   |-- python-builder.md
-    |   `-- vba-builder.md
-    |-- rules/
-    |   |-- output-and-safety.md
-    |   `-- security-baseline.md
-    `-- templates/
-        `-- builder-template.md
-```
-
-### Design Philosophy
-
-- Keep the root `SKILL.md` as the orchestration hub
-- Load only the references that materially help with the current task
-- Prefer executable, maintainable solutions over abstract guidance
-- Preserve clarity for non-technical users
-- Default to the smallest viable implementation
-
----
-
-## Typical Prompts
-
-Examples of requests this skill is designed to handle well:
-
-```text
-Clean this Excel workbook and highlight duplicate invoice IDs.
+Clean this workbook, remove blank rows, and highlight duplicate invoice IDs.
 ```
 
 ```text
@@ -148,71 +102,72 @@ Fix this existing VBA macro and make it safer before it sends Outlook emails.
 Review this PowerShell script for dangerous patterns and harden it.
 ```
 
----
+For more concrete routing examples, see [examples/concrete-use-cases.md](examples/concrete-use-cases.md).
 
-## Who It Is For
+## Repository Layout
+
+```text
+.
+|-- AGENTS.md
+|-- LICENSE
+|-- README.md
+|-- SKILL.md
+|-- assets/
+|   |-- ai-builder-banner.svg
+|   `-- ai-builder-social-preview.svg
+|-- examples/
+|   `-- concrete-use-cases.md
+`-- references/
+    |-- builders/
+    |   |-- html-css-javascript-builder.md
+    |   |-- office-script-builder.md
+    |   |-- powershell-builder.md
+    |   |-- python-builder.md
+    |   |-- security-builder.md
+    |   `-- vba-builder.md
+    |-- rules/
+    |   |-- output-and-safety.md
+    |   `-- security-baseline.md
+    `-- templates/
+        `-- builder-template.md
+```
+
+## Start Here
+
+If you are using this repository as a skill source:
+
+1. Read [SKILL.md](SKILL.md) for the orchestration logic.
+2. Read [references/builders/office-script-builder.md](references/builders/office-script-builder.md) for office-heavy and admin-heavy routing.
+3. Load the matching builder for the request.
+4. Load [references/rules/security-baseline.md](references/rules/security-baseline.md) when the task touches risky operations.
+
+## Who This Is For
 
 AI Builder is especially useful for:
 
 - operations and back-office teams
 - analysts working with Excel and CSV exports
-- admins and power users on Windows
-- founders and small teams automating internal workflows
-- AI users who need practical scripts, not app architecture
+- Windows admins and power users
+- founders automating internal workflows
+- AI users who want practical scripts instead of generic prompt bundles
 
-It assumes many users are not full-time developers and optimizes for:
+## Visual Assets
 
-- fewer setup steps
-- direct copy-paste execution
-- clear run instructions
-- visible configuration
-- operational safety
+The repository includes:
 
----
-
-## How To Use It
-
-This repository is structured as a skill source.
-
-The canonical behavior lives in [SKILL.md](SKILL.md), while implementation-specific and safety-specific behavior lives under [`references/`](references).
-
-If you are using a skill-aware coding assistant, point it at this repository or copy the skill files into your local skill system. If you are using the repository manually, start with:
-
-1. `SKILL.md`
-2. `references/builders/office-script-builder.md`
-3. the matching language builder
-4. `references/rules/security-baseline.md` when the task is risky
-
----
-
-## Current Focus
-
-The repository is intentionally narrow.
-
-It is optimized for:
-
-- lightweight frontend tools
-- Office automation
-- Windows scripting
-- business data workflows
-- secure-by-default scripting guidance
-
-It is not trying to be a general software engineering framework or a giant generic prompt library.
-
----
+- [assets/ai-builder-banner.svg](assets/ai-builder-banner.svg) for the README hero
+- [assets/ai-builder-social-preview.svg](assets/ai-builder-social-preview.svg) as a ready-made social preview asset for GitHub repo settings
 
 ## Roadmap Direction
 
 Likely next extensions:
 
-- richer Office-specific security references
+- richer Office-specific security guidance
 - reusable static frontend patterns and examples
-- reusable examples for common VBA, PowerShell, and Python workflows
-- public installation notes for multiple AI tooling environments
-- audit-oriented references for internal automation and no-code connectors
-
----
+- more concrete VBA, PowerShell, Python, and browser-tool workflows
+- installation notes for multiple AI tooling environments
+- audit-oriented references for no-code and connector-heavy operations
 
 ## License
 
-This repository currently uses the [MIT License](LICENSE).
+This repository uses the [MIT License](LICENSE).
