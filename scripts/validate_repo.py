@@ -17,6 +17,8 @@ REQUIRED_FILES = [
     ROOT / "GEMINI.local.example.md",
     ROOT / "SKILL.md",
     ROOT / "README.md",
+    ROOT / "release-notes" / "v0.1.0.md",
+    ROOT / "release-notes" / "v0.2.0.md",
     ROOT / "LICENSE",
     ROOT / ".github" / "workflows" / "ci.yml",
     ROOT / "scripts" / "validate_repo.py",

@@ -224,6 +224,7 @@ This repository now ships UI-facing metadata for skill-aware platforms in [agent
 That file is intended for harnesses and skill lists, while [SKILL.md](SKILL.md) remains the canonical behavior layer.
 
 Versioned release notes live in [CHANGELOG.md](CHANGELOG.md).
+Draft GitHub release bodies live in [release-notes/](release-notes).
 
 ## Platform References
 
