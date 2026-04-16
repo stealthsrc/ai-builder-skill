@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://github.com/StealthyLabsHQ/ai-builder-skill/blob/main/LICENSE"><img src="https://img.shields.io/github/license/StealthyLabsHQ/ai-builder-skill?style=flat-square" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/runtimes-Codex%20%7C%20Claude%20Code%20%7C%20Claude%20Web%20%7C%20ChatGPT%20%7C%20Gemini%20CLI%20%7C%20Antigravity-16333B?style=flat-square" alt="Runtimes badge">
-  <img src="https://img.shields.io/badge/routing-VBA%20%7C%20PowerShell%20%7C%20Python%20%7C%20HTML%2FCSS%2FJS-1F766C?style=flat-square" alt="Routing badge">
+  <img src="https://img.shields.io/badge/routing-VBA%20%7C%20PS%20%7C%20Python%20%7C%20GAS%20%7C%20Node%20%7C%20Bash%20%7C%20React%20%7C%20HTML%2FJS-1F766C?style=flat-square" alt="Routing badge">
   <img src="https://img.shields.io/badge/focus-business%20automation%20%2B%20security-5B2A86?style=flat-square" alt="Focus badge">
 </p>
 
@@ -20,7 +20,11 @@ It helps an AI assistant choose the right implementation path before code is wri
 - `HTML/CSS/JavaScript` for lightweight browser tools and static frontends
 - `VBA` for Office desktop macros and workbook logic
 - `PowerShell` for Windows-native automation and COM workflows
-- `Python` for data pipelines, reporting, and maintainable scripting
+- `Python` for data pipelines, SQL queries, reporting, and maintainable scripting
+- `Google Apps Script` for Google Workspace automation (Sheets, Docs, Gmail, Drive)
+- `TypeScript/Node.js` for CLI scripts, APIs, bots, and cross-platform automation
+- `Bash/Shell` for Linux and macOS shell automation and CI/CD pipelines
+- `React` for vibe-coded internal tools, dashboards, and component-based UIs
 - `Security-first guidance` for risky or high-impact automation
 
 This repository is optimized for real operating work:
@@ -46,7 +50,11 @@ It is especially useful when the person asking for help is close to spreadsheets
 | Lightweight browser tool, static dashboard, or no-framework frontend | `references/builders/html-css-javascript-builder.md` |
 | Office desktop macro or existing macro maintenance | `references/builders/vba-builder.md` |
 | Windows-native automation or operational scripting | `references/builders/powershell-builder.md` |
-| Cross-file data processing or maintainable automation | `references/builders/python-builder.md` |
+| Cross-file data processing, SQL queries, or maintainable automation | `references/builders/python-builder.md` |
+| Google Workspace automation (Sheets, Docs, Gmail, Drive) | `references/builders/google-apps-script-builder.md` |
+| CLI scripts, Node APIs, bots, or cross-platform automation | `references/builders/typescript-node-builder.md` |
+| Linux/macOS shell automation, CI/CD scripts, or cron jobs | `references/builders/bash-shell-builder.md` |
+| Vibe-coded internal tools or component-based UIs with state | `references/builders/react-builder.md` |
 | Hardening, audit, risky automation, secrets, or high-impact operations | `references/builders/security-builder.md` |
 | No-code, admin, or office-heavy request with no explicit language | `references/builders/office-script-builder.md` first |
 
@@ -146,24 +154,37 @@ For more concrete routing examples, see [examples/concrete-use-cases.md](example
 |   `-- vba/
 |-- references/
 |   |-- builders/
+|   |   |-- bash-shell-builder.md
+|   |   |-- google-apps-script-builder.md
 |   |   |-- html-css-javascript-builder.md
 |   |   |-- office-script-builder.md
 |   |   |-- powershell-builder.md
 |   |   |-- python-builder.md
+|   |   |-- react-builder.md
 |   |   |-- security-builder.md
+|   |   |-- typescript-node-builder.md
 |   |   `-- vba-builder.md
 |   |-- patterns/
+|   |   |-- bash-shell-patterns.md
+|   |   |-- google-apps-script-patterns.md
 |   |   |-- html-js-patterns.md
 |   |   |-- powershell-patterns.md
 |   |   |-- python-patterns.md
+|   |   |-- react-patterns.md
+|   |   |-- typescript-node-patterns.md
 |   |   `-- vba-patterns.md
 |   |-- recipes/
 |   |   |-- archive-by-date.md
+|   |   |-- bash-bulk-archive.md
 |   |   |-- bulk-rename-safe.md
 |   |   |-- csv-merge-excel-ready.md
 |   |   |-- dedup-workbook.md
 |   |   |-- kpi-dashboard.md
-|   |   `-- outlook-send-confirmed.md
+|   |   |-- node-api-csv.md
+|   |   |-- outlook-send-confirmed.md
+|   |   |-- react-kpi-dashboard.md
+|   |   |-- sheets-dedup.md
+|   |   `-- sql-query-to-excel.md
 |   |-- platforms/
 |   |   |-- antigravity.md
 |   |   |-- chatgpt.md
@@ -193,16 +214,25 @@ The builders are routers. The depth for code generation lives in two layers load
 - **Patterns** — one file per language with skeletons, idioms, and anti-patterns:
   - [references/patterns/vba-patterns.md](references/patterns/vba-patterns.md)
   - [references/patterns/powershell-patterns.md](references/patterns/powershell-patterns.md)
-  - [references/patterns/python-patterns.md](references/patterns/python-patterns.md)
-  - [references/patterns/html-js-patterns.md](references/patterns/html-js-patterns.md)
+  - [references/patterns/python-patterns.md](references/patterns/python-patterns.md) (includes SQL patterns)
+  - [references/patterns/html-js-patterns.md](references/patterns/html-js-patterns.md) (includes Claude Artifacts)
+  - [references/patterns/google-apps-script-patterns.md](references/patterns/google-apps-script-patterns.md)
+  - [references/patterns/typescript-node-patterns.md](references/patterns/typescript-node-patterns.md)
+  - [references/patterns/bash-shell-patterns.md](references/patterns/bash-shell-patterns.md)
+  - [references/patterns/react-patterns.md](references/patterns/react-patterns.md)
 
 - **Recipes** — end-to-end solutions with code, run steps, validation, and rollback:
   - [references/recipes/dedup-workbook.md](references/recipes/dedup-workbook.md) (VBA)
+  - [references/recipes/sheets-dedup.md](references/recipes/sheets-dedup.md) (Google Apps Script)
   - [references/recipes/bulk-rename-safe.md](references/recipes/bulk-rename-safe.md) (PowerShell)
+  - [references/recipes/archive-by-date.md](references/recipes/archive-by-date.md) (PowerShell)
+  - [references/recipes/bash-bulk-archive.md](references/recipes/bash-bulk-archive.md) (Bash)
   - [references/recipes/csv-merge-excel-ready.md](references/recipes/csv-merge-excel-ready.md) (Python)
+  - [references/recipes/sql-query-to-excel.md](references/recipes/sql-query-to-excel.md) (Python + SQL)
+  - [references/recipes/node-api-csv.md](references/recipes/node-api-csv.md) (TypeScript/Node.js)
   - [references/recipes/outlook-send-confirmed.md](references/recipes/outlook-send-confirmed.md) (VBA + PowerShell)
   - [references/recipes/kpi-dashboard.md](references/recipes/kpi-dashboard.md) (HTML/CSS/JS)
-  - [references/recipes/archive-by-date.md](references/recipes/archive-by-date.md) (PowerShell)
+  - [references/recipes/react-kpi-dashboard.md](references/recipes/react-kpi-dashboard.md) (Vite React)
 
 Each builder links to its matching pattern and recipes under a **Deep References** section so progressive-disclosure runtimes (Claude Skills, ChatGPT knowledge files) load only what the task needs.
 

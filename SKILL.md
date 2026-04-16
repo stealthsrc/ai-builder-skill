@@ -33,8 +33,12 @@ Both entry points route to the same references under `references/`. Thin platfor
 
 - Use [references/builders/vba-builder.md](references/builders/vba-builder.md) for Office desktop macros, worksheet logic, workbook events, buttons, forms, and existing macro maintenance.
 - Use [references/builders/powershell-builder.md](references/builders/powershell-builder.md) for Windows-native automation, file and folder operations, COM automation, scheduled tasks, and operational scripting.
-- Use [references/builders/python-builder.md](references/builders/python-builder.md) for data processing, CSV or Excel transformations, PDF or API workflows, reporting, ETL, and automation that benefits from portability or maintainability.
+- Use [references/builders/python-builder.md](references/builders/python-builder.md) for data processing, CSV or Excel transformations, SQL queries, PDF or API workflows, reporting, ETL, and automation that benefits from portability or maintainability.
 - Use [references/builders/html-css-javascript-builder.md](references/builders/html-css-javascript-builder.md) for lightweight browser tools, static internal utilities, landing pages, forms, dashboards, and no-framework frontend work that should stay portable and easy to hand off.
+- Use [references/builders/google-apps-script-builder.md](references/builders/google-apps-script-builder.md) for Google Workspace automation — Sheets macros, Docs generation, Gmail workflows, Drive management, and any task that is the Google equivalent of a VBA or Office workflow.
+- Use [references/builders/typescript-node-builder.md](references/builders/typescript-node-builder.md) for CLI scripts, lightweight Node APIs, file-processing pipelines, Discord/Slack bots, and cross-platform automation that needs more than a browser but less than a full backend framework.
+- Use [references/builders/bash-shell-builder.md](references/builders/bash-shell-builder.md) for Linux and macOS shell automation, CI/CD scripts, cron jobs, system administration, and pipelines that wrap other CLI tools.
+- Use [references/builders/react-builder.md](references/builders/react-builder.md) for internal tools, admin panels, multi-step forms, and vibe-coded UIs that need component state — use Vite + TypeScript by default, no heavy framework.
 - Use [references/builders/security-builder.md](references/builders/security-builder.md) when the task is to review, harden, or make safer an automation, or when the implementation will handle secrets, external content, or high-impact actions.
 - If the request is ambiguous, choose the smallest viable implementation, state the chosen language briefly, and keep assumptions explicit.
 

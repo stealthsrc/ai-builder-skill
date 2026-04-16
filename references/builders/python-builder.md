@@ -36,3 +36,4 @@ Load these when the task is non-trivial:
 
 - [../patterns/python-patterns.md](../patterns/python-patterns.md) — script skeleton with `argparse` and `logging`, Excel-friendly CSV idioms (`utf-8-sig`, `newline=""`), openpyxl and pandas trade-offs, atomic writes, safe subprocess, HTTP retries, anti-patterns.
 - [../recipes/csv-merge-excel-ready.md](../recipes/csv-merge-excel-ready.md) — merge many CSVs into one formatted `.xlsx` with frozen header, bold fill, and auto-width.
+- [../recipes/sql-query-to-excel.md](../recipes/sql-query-to-excel.md) — run a SQL query against a SQLite database or a folder of CSVs (via DuckDB) and export formatted Excel output.

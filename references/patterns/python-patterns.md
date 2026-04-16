@@ -295,7 +295,65 @@ except PermissionError:
 
 ---
 
+## 11. SQL Patterns
+
+For SQLite and DuckDB (CSV-as-tables), always use parameterized queries. Never build SQL strings with f-strings or `%` formatting.
+
+```python
+import sqlite3
+from pathlib import Path
+
+def query_sqlite(db: Path, sql: str, params: tuple = ()) -> list[dict]:
+    """Run a parameterized query and return rows as dicts."""
+    with sqlite3.connect(db) as conn:
+        conn.row_factory = sqlite3.Row
+        cur = conn.execute(sql, params)
+        return [dict(row) for row in cur.fetchall()]
+
+# ✓ Safe: parameterized
+rows = query_sqlite(
+    Path("sales.db"),
+    "SELECT * FROM orders WHERE region = ? AND amount > ?",
+    ("West", 1000),
+)
+
+# ✗ Unsafe: string interpolation → SQL injection
+# rows = query_sqlite(db, f"SELECT * FROM orders WHERE region = '{user_input}'")
+```
+
+For CSV-as-tables with DuckDB:
+
+```python
+import duckdb
+from pathlib import Path
+
+def query_csvs(csv_dir: Path, sql: str) -> list[dict]:
+    con = duckdb.connect()
+    for csv_file in sorted(csv_dir.glob("*.csv")):
+        # Table name = file stem — must be a safe identifier
+        if not csv_file.stem.replace("_", "").isalnum():
+            raise ValueError(f"Unsafe filename for SQL table: {csv_file.stem}")
+        con.execute(f"CREATE VIEW {csv_file.stem} AS SELECT * FROM read_csv_auto(?)", [str(csv_file)])
+    return con.execute(sql).fetchdf().to_dict("records")
+```
+
+Use `pandas.read_sql_query` when integrating with openpyxl or Excel output:
+
+```python
+import pandas as pd
+import sqlite3
+
+with sqlite3.connect("sales.db") as conn:
+    df = pd.read_sql_query(
+        "SELECT region, SUM(amount) AS total FROM orders GROUP BY region",
+        conn,
+    )
+```
+
+---
+
 ## Related
 
 - Recipe: [../recipes/csv-merge-excel-ready.md](../recipes/csv-merge-excel-ready.md)
+- Recipe: [../recipes/sql-query-to-excel.md](../recipes/sql-query-to-excel.md)
 - Safety: [../rules/security-baseline.md](../rules/security-baseline.md)

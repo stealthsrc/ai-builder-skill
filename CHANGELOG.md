@@ -8,6 +8,23 @@ The format is inspired by Keep a Changelog and the version labels in this file a
 
 - No unreleased changes yet.
 
+## [0.5.0] - 2026-04-16
+
+### Added
+
+- Four new language builders: `references/builders/google-apps-script-builder.md`, `references/builders/typescript-node-builder.md`, `references/builders/bash-shell-builder.md`, `references/builders/react-builder.md`
+- Four new pattern libraries: `references/patterns/google-apps-script-patterns.md`, `references/patterns/typescript-node-patterns.md`, `references/patterns/bash-shell-patterns.md`, `references/patterns/react-patterns.md`
+- Five new recipes: `references/recipes/sheets-dedup.md` (GAS), `references/recipes/node-api-csv.md` (Node.js), `references/recipes/sql-query-to-excel.md` (Python+DuckDB), `references/recipes/bash-bulk-archive.md` (Bash), `references/recipes/react-kpi-dashboard.md` (Vite React)
+- SQL patterns section in `references/patterns/python-patterns.md` (parameterized SQLite + DuckDB + pandas integration)
+- Claude Artifacts section in `references/patterns/html-js-patterns.md` (single-file constraints, safe DOM, inline styles)
+- SQL recipe reference in `references/builders/python-builder.md` Deep References
+
+### Changed
+
+- `SKILL.md` routing table expanded to cover all eight builders
+- `scripts/validate_repo.py` REQUIRED_FILES extended with all new builders, patterns, and recipes
+- `eval/routing-cases.json` expanded from 19 to 24 cases with new builder-specific routing fixtures
+
 ## [0.3.0] - 2026-04-16
 
 ### Added

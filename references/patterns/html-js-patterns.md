@@ -320,6 +320,55 @@ async function fetchJson(url, { timeoutMs = 10_000, ...init } = {}) {
 
 ---
 
+## 12. Claude Artifacts Pattern
+
+Claude.ai artifacts run plain JavaScript in an isolated sandbox. Adapt the standard template to produce a single self-contained HTML file with no external dependencies.
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tool</title>
+  <style>
+    /* All CSS inline — no external stylesheet */
+    :root { --color-primary: #2563eb; --radius: 8px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; padding: 1.5rem; }
+  </style>
+</head>
+<body>
+  <main id="app"></main>
+  <script>
+    // All JS inline — no import, no fetch to external domains
+    // Use textContent, not innerHTML, for user-supplied data
+
+    const app = document.getElementById('app');
+
+    function render(state) {
+      app.replaceChildren(); // safe DOM clear
+      const h1 = document.createElement('h1');
+      h1.textContent = state.title;
+      app.appendChild(h1);
+      // ... build DOM from state ...
+    }
+
+    render({ title: 'My Tool' });
+  </script>
+</body>
+</html>
+```
+
+Key constraints for artifacts:
+- No external `fetch` to third-party URLs — sandbox blocks most outbound requests.
+- No `import` or `require` — single-file only.
+- Use `textContent` and `createElement` throughout — `innerHTML` with user input is blocked by the artifact CSP.
+- Inline all styles; `<link rel="stylesheet" href="...">` to external URLs will fail.
+- Charts: use `<canvas>` with hand-drawn logic, or include a small self-contained library as an inline `<script>` block.
+
+---
+
 ## Related
 
 - Recipe: [../recipes/kpi-dashboard.md](../recipes/kpi-dashboard.md)

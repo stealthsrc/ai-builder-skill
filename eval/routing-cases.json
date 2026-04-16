@@ -239,5 +239,67 @@
       "destructive-file-op"
     ],
     "notes": "File moves across directories must load the archive recipe and its rollback plan."
+  },
+  {
+    "id": "gas-sheets-dedup",
+    "prompt": "Write a Google Apps Script macro that removes duplicate rows from a Google Sheet, keeping the first occurrence of each invoice ID.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/google-apps-script-builder.md",
+    "required_references": [
+      "references/patterns/google-apps-script-patterns.md",
+      "references/recipes/sheets-dedup.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "GAS dedup should load the batch read/write pattern and the sheets dedup recipe."
+  },
+  {
+    "id": "node-csv-api-enrich",
+    "prompt": "Write a TypeScript Node.js CLI that reads a CSV of contacts, calls an enrichment API per row, and writes the results to a new CSV.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/typescript-node-builder.md",
+    "required_references": [
+      "references/patterns/typescript-node-patterns.md",
+      "references/recipes/node-api-csv.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Node CLI with external API calls should load TS patterns and the node-api-csv recipe."
+  },
+  {
+    "id": "sql-to-excel-report",
+    "prompt": "Run a SQL query against a SQLite database and export the results as a formatted Excel report with a frozen header.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/python-builder.md",
+    "required_references": [
+      "references/patterns/python-patterns.md",
+      "references/recipes/sql-query-to-excel.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "SQL-to-Excel should route to Python builder and load the sql-query-to-excel recipe."
+  },
+  {
+    "id": "bash-archive-by-date",
+    "prompt": "Write a Bash script that moves all PDF files in a source folder into monthly subfolders with a dry-run mode and a move log.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/bash-shell-builder.md",
+    "required_references": [
+      "references/patterns/bash-shell-patterns.md",
+      "references/recipes/bash-bulk-archive.md"
+    ],
+    "expected_risk_flags": [
+      "destructive-file-op"
+    ],
+    "notes": "Bash file moves must load the dry-run pattern and the archive recipe with rollback guidance."
+  },
+  {
+    "id": "react-kpi-dashboard",
+    "prompt": "Build a React dashboard where I can drop a CSV and see KPI cards and a line chart. Use Vite and TypeScript.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/react-builder.md",
+    "required_references": [
+      "references/patterns/react-patterns.md",
+      "references/recipes/react-kpi-dashboard.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "React dashboard with CSV input should load React patterns and the React KPI recipe."
   }
 ]
