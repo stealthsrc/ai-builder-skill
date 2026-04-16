@@ -112,7 +112,9 @@ The format is inspired by Keep a Changelog and the version labels in this file a
 - Routing evaluation fixtures, repository validation scripts, and GitHub Actions CI
 - OpenAI-facing metadata in `agents/openai.yaml`
 
-[Unreleased]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.3.0...main
+[Unreleased]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.6.0...main
+[0.6.0]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.5.0...v0.6.0
+[0.5.0]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.3.0...v0.5.0
 [0.3.0]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/StealthyLabsHQ/ai-builder-skill/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/StealthyLabsHQ/ai-builder-skill/releases/tag/v0.1.0
