@@ -59,6 +59,7 @@ For this repo:
 ## How To Package This Repo For Claude Code
 
 - a top-level `CLAUDE.md` that imports `AGENTS.md`
+- a project `.claude/settings.json` copied from `.claude/settings.example.json` when you want a safe shared baseline
 - optional `.claude/rules/` files for path-specific behavior
 - optional `.claude/skills/` wrappers if you want Claude-native slash-invocable workflows
 

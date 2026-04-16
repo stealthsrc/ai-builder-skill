@@ -77,6 +77,7 @@ Gemini CLI documents sandboxing directly, including:
 - keep `AGENTS.md` as the canonical repo instruction file
 - add a `GEMINI.md` wrapper if you want first-class Gemini ergonomics
 - or configure `context.fileName` to include `AGENTS.md`
+- use `.gemini/settings.example.json` as the starting point for a workspace `.gemini/settings.json`
 - prefer trusted folders when you need project-level commands or settings
 - prefer sandboxed runs for unfamiliar or risky repositories
 - keep local Gemini settings conservative for file writes and tool execution

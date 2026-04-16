@@ -15,9 +15,11 @@ tmp/
 
 # Local AI tool state and scratch context
 .codex/
-.claude/
+.claude/*
+!.claude/settings.example.json
 .cursor/
-.gemini/
+.gemini/*
+!.gemini/settings.example.json
 
 # Python cache
 __pycache__/

@@ -1,0 +1,38 @@
+{
+  "general": {
+    "defaultApprovalMode": "default",
+    "plan": {
+      "enabled": true
+    }
+  },
+  "context": {
+    "fileName": [
+      "AGENTS.md",
+      "GEMINI.md"
+    ],
+    "loadMemoryFromIncludeDirectories": false,
+    "fileFiltering": {
+      "respectGitIgnore": true,
+      "respectGeminiIgnore": true,
+      "enableRecursiveFileSearch": true
+    }
+  },
+  "tools": {
+    "useRipgrep": true
+  },
+  "security": {
+    "toolSandboxing": true,
+    "disableYoloMode": true,
+    "enablePermanentToolApproval": false,
+    "folderTrust": {
+      "enabled": true
+    }
+  },
+  "skills": {
+    "enabled": true
+  },
+  "hooksConfig": {
+    "enabled": true,
+    "notifications": true
+  }
+}

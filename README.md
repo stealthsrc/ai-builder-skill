@@ -111,6 +111,10 @@ For more concrete routing examples, see [examples/concrete-use-cases.md](example
 |-- .github/
 |   `-- workflows/
 |       `-- ci.yml
+|-- .claude/
+|   `-- settings.example.json
+|-- .gemini/
+|   `-- settings.example.json
 |-- AGENTS.md
 |-- CLAUDE.md
 |-- GEMINI.md
@@ -186,6 +190,7 @@ Use the repository in the simplest way your AI tool supports:
 
 - point Claude at the repository root as a local skill source
 - use [CLAUDE.md](CLAUDE.md) as the thin Claude adapter
+- copy [.claude/settings.example.json](.claude/settings.example.json) to `.claude/settings.json` if you want a shared project baseline
 - load `SKILL.md` as the primary instruction file
 - keep the `references/` directory available alongside it
 
@@ -193,6 +198,7 @@ Use the repository in the simplest way your AI tool supports:
 
 - use [GEMINI.md](GEMINI.md) as the thin Gemini adapter, or
 - configure Gemini CLI `context.fileName` to include `AGENTS.md`
+- copy [.gemini/settings.example.json](.gemini/settings.example.json) to `.gemini/settings.json` for a conservative workspace baseline
 - keep `references/` available so Gemini can load only the relevant builder, rule, or platform reference
 
 ### Cursor or editor-agent workflows
@@ -229,6 +235,8 @@ The repository also ships ready-to-use root adapters:
 
 - [CLAUDE.md](CLAUDE.md)
 - [GEMINI.md](GEMINI.md)
+- [.claude/settings.example.json](.claude/settings.example.json)
+- [.gemini/settings.example.json](.gemini/settings.example.json)
 
 ## Examples And Starters
 
