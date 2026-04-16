@@ -1,0 +1,37 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# Temporary and local workspace files
+*.tmp
+*.bak
+*.log
+tmp/
+.tmp/
+.tmp-*/
+
+# Local AI tool state and scratch context
+.codex/
+.claude/
+.cursor/
+.gemini/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node tooling
+node_modules/
+
+# Secrets and local config
+.env
+.env.*
+*.secret
+*.secrets
+*.key
+*.pem
+*.p12
+*.pfx
