@@ -17,6 +17,7 @@ Expected structure:
 
 - `SKILL.md` -> main skill hub and canonical high-level instruction source
 - `references/builders/` -> specialized builder references such as `html-css-javascript-builder.md`, `vba-builder.md`, `powershell-builder.md`, `python-builder.md`
+- `references/platforms/` -> agent-specific references such as `codex.md`, `claude-code.md`, `gemini-cli.md`
 - `references/rules/` -> routing rules, output rules, and shared conventions
 - `references/rules/` may also include risk classification aids such as trigger matrices
 - `references/templates/` -> reusable templates for future builders or derived skills
@@ -32,9 +33,10 @@ When working in this repository, follow this order of precedence:
 1. The user's explicit request
 2. The root `SKILL.md`
 3. The most relevant file under `references/builders/`
-4. The most relevant file under `references/rules/`
-5. General repository conventions
-6. Default model behavior
+4. The most relevant file under `references/platforms/`
+5. The most relevant file under `references/rules/`
+6. General repository conventions
+7. Default model behavior
 
 If there is any conflict, prefer the most specific instruction that still fits the user's request safely and clearly.
 
@@ -47,8 +49,9 @@ Before generating code, plans, implementation steps, or refactors:
 1. Read the user's request and identify the main goal.
 2. Use the root `SKILL.md` as the primary routing and behavior guide.
 3. Determine whether a specialized reference under `references/builders/` should be applied.
-4. Apply any shared constraints from `references/rules/` when relevant.
-5. Produce the smallest viable solution that is executable, maintainable, and adapted to the user's technical level.
+4. Determine whether a platform-specific reference under `references/platforms/` should be applied.
+5. Apply any shared constraints from `references/rules/` when relevant.
+6. Produce the smallest viable solution that is executable, maintainable, and adapted to the user's technical level.
 
 Do not assume that every reference file is equally important.
 Use only the references that materially improve the result.
@@ -273,7 +276,17 @@ Use these for shared conventions such as:
 - naming conventions
 - project-wide quality rules
 
-### 9.3 `references/templates/`
+### 9.3 `references/platforms/`
+
+Use these for agent-specific adaptation behavior.
+They should influence:
+
+- how repo instructions should be surfaced to a specific agent
+- which platform-native mechanisms are preferred
+- when to use skills, hooks, memory files, or settings
+- how to keep one repository portable across agent runtimes
+
+### 9.4 `references/templates/`
 
 Use these only when creating new builders, new references, or new derived documentation.
 Do not treat templates as the primary instruction source for an end-user request.

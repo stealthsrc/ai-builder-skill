@@ -143,6 +143,13 @@ For more concrete routing examples, see [examples/concrete-use-cases.md](example
     |   |-- python-builder.md
     |   |-- security-builder.md
     |   `-- vba-builder.md
+    |-- platforms/
+    |   |-- claude-code-hooks.md
+    |   |-- claude-code.md
+    |   |-- codex-claude-gemini-crosswalk.md
+    |   |-- codex-task-shaping.md
+    |   |-- codex.md
+    |   `-- gemini-cli.md
     |-- rules/
     |   |-- output-and-safety.md
     |   |-- risk-trigger-matrix.md
@@ -195,6 +202,19 @@ Use the repository in the simplest way your AI tool supports:
 This repository now ships UI-facing metadata for skill-aware platforms in [agents/openai.yaml](agents/openai.yaml).
 
 That file is intended for harnesses and skill lists, while [SKILL.md](SKILL.md) remains the canonical behavior layer.
+
+## Platform References
+
+The repository now includes agent-specific adaptation references:
+
+- [references/platforms/codex.md](references/platforms/codex.md)
+- [references/platforms/codex-task-shaping.md](references/platforms/codex-task-shaping.md)
+- [references/platforms/claude-code.md](references/platforms/claude-code.md)
+- [references/platforms/claude-code-hooks.md](references/platforms/claude-code-hooks.md)
+- [references/platforms/gemini-cli.md](references/platforms/gemini-cli.md)
+- [references/platforms/codex-claude-gemini-crosswalk.md](references/platforms/codex-claude-gemini-crosswalk.md)
+
+Use them when the target runtime matters as much as the programming language.
 
 ## Examples And Starters
 

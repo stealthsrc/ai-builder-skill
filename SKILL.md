@@ -13,6 +13,7 @@ Use this skill as a hub for business automation requests that need a practical i
 - Read [references/rules/output-and-safety.md](references/rules/output-and-safety.md) for the shared response and safety baseline.
 - If the request touches credentials, secrets, external downloads, command execution, file deletion, COM automation, email, or asks for an audit or hardening pass, also read [references/rules/security-baseline.md](references/rules/security-baseline.md).
 - If the request includes multiple risk signals or the blast radius is unclear, also read [references/rules/risk-trigger-matrix.md](references/rules/risk-trigger-matrix.md).
+- If the user explicitly mentions Codex, Claude Code, Claude, Gemini CLI, `CLAUDE.md`, or `GEMINI.md`, also read the matching file under [references/platforms/](references/platforms).
 - For office-heavy, admin, or no-code requests, read [references/builders/office-script-builder.md](references/builders/office-script-builder.md) first.
 - For lightweight browser-based tools, static dashboards, forms, or no-framework frontend requests, read [references/builders/html-css-javascript-builder.md](references/builders/html-css-javascript-builder.md).
 - For security reviews or risky automation flows, read [references/builders/security-builder.md](references/builders/security-builder.md) before the language-specific builder.
@@ -49,6 +50,7 @@ Use this skill as a hub for business automation requests that need a practical i
 
 - Use files under `references/builders/` for language-specific implementation behavior.
 - Use files under `references/rules/` for shared conventions.
+- Use files under `references/platforms/` for agent-specific adaptation guidance.
 - Treat `references/rules/security-baseline.md` as the shared guardrail for secrets, dangerous language patterns, network use, and file safety.
 - Use `references/rules/risk-trigger-matrix.md` when the risk is implicit or spans multiple categories.
 - Use files under `references/templates/` only when extending this repository with new builders or derived documentation.
