@@ -10,6 +10,7 @@ REQUIRED_FILES = [
     ROOT / ".claude" / "settings.example.json",
     ROOT / ".gemini" / "settings.example.json",
     ROOT / "AGENTS.md",
+    ROOT / "CHANGELOG.md",
     ROOT / "CLAUDE.md",
     ROOT / "CLAUDE.local.example.md",
     ROOT / "GEMINI.md",
@@ -46,6 +47,7 @@ REQUIRED_FILES = [
 ]
 MARKDOWN_FILES = [
     ROOT / "README.md",
+    ROOT / "CHANGELOG.md",
     ROOT / "SKILL.md",
     ROOT / "AGENTS.md",
     ROOT / "CLAUDE.md",

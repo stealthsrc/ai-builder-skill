@@ -116,6 +116,7 @@ For more concrete routing examples, see [examples/concrete-use-cases.md](example
 |-- .gemini/
 |   `-- settings.example.json
 |-- AGENTS.md
+|-- CHANGELOG.md
 |-- CLAUDE.md
 |-- CLAUDE.local.example.md
 |-- GEMINI.md
@@ -221,6 +222,8 @@ Use the repository in the simplest way your AI tool supports:
 This repository now ships UI-facing metadata for skill-aware platforms in [agents/openai.yaml](agents/openai.yaml).
 
 That file is intended for harnesses and skill lists, while [SKILL.md](SKILL.md) remains the canonical behavior layer.
+
+Versioned release notes live in [CHANGELOG.md](CHANGELOG.md).
 
 ## Platform References
 
