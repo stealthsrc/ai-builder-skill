@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://github.com/StealthyLabsHQ/ai-builder-skill/blob/main/LICENSE"><img src="https://img.shields.io/github/license/StealthyLabsHQ/ai-builder-skill?style=flat-square" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/runtimes-Codex%20%7C%20Claude%20Code%20%7C%20Claude%20Web%20%7C%20ChatGPT%20%7C%20Gemini%20CLI%20%7C%20Antigravity-16333B?style=flat-square" alt="Runtimes badge">
-  <img src="https://img.shields.io/badge/routing-VBA%20%7C%20PS%20%7C%20Python%20%7C%20GAS%20%7C%20Node%20%7C%20Bash%20%7C%20React%20%7C%20HTML%2FJS-1F766C?style=flat-square" alt="Routing badge">
+  <img src="https://img.shields.io/badge/builders-25%20languages-1F766C?style=flat-square" alt="Routing badge">
   <img src="https://img.shields.io/badge/focus-business%20automation%20%2B%20security-5B2A86?style=flat-square" alt="Focus badge">
 </p>
 
@@ -25,6 +25,21 @@ It helps an AI assistant choose the right implementation path before code is wri
 - `TypeScript/Node.js` for CLI scripts, APIs, bots, and cross-platform automation
 - `Bash/Shell` for Linux and macOS shell automation and CI/CD pipelines
 - `React` for vibe-coded internal tools, dashboards, and component-based UIs
+- `C / C++` for systems programming, embedded targets, and performance-critical tools
+- `C#` for Windows desktop apps, .NET automation, ASP.NET Core APIs, and Unity
+- `Java` for enterprise applications, Spring Boot microservices, and Android
+- `PHP` for Laravel, WordPress, and server-side web backends
+- `SQL` for standalone migrations, reporting queries, and schema management
+- `Ruby` for automation scripts, Rails/Sinatra web apps, and Rake tasks
+- `Visual Basic .NET` for Windows Forms apps and legacy .NET maintenance
+- `R` for statistical analysis, data visualization, and Quarto reports
+- `Swift` for iOS and macOS apps, SwiftUI, and macOS CLI tools
+- `Rust` for systems tools, high-performance CLI utilities, and WebAssembly
+- `Go` for single-binary CLI tools, REST APIs, and microservices
+- `Kotlin` for Android apps, Ktor APIs, and Gradle build scripts
+- `Elixir` for Phoenix web APIs, real-time features, and fault-tolerant services
+- `Scala` for Apache Spark pipelines, functional JVM programming, and Akka systems
+- `Lua` for Roblox game scripting, Love2D, Neovim plugins, and embedded scripting
 - `Security-first guidance` for risky or high-impact automation
 
 This repository is optimized for real operating work:
@@ -55,6 +70,21 @@ It is especially useful when the person asking for help is close to spreadsheets
 | CLI scripts, Node APIs, bots, or cross-platform automation | `references/builders/typescript-node-builder.md` |
 | Linux/macOS shell automation, CI/CD scripts, or cron jobs | `references/builders/bash-shell-builder.md` |
 | Vibe-coded internal tools or component-based UIs with state | `references/builders/react-builder.md` |
+| Systems programming, embedded, or performance-critical tools | `references/builders/c-cpp-builder.md` |
+| Windows desktop apps, .NET automation, ASP.NET Core, Unity | `references/builders/csharp-builder.md` |
+| Enterprise apps, Spring Boot, Android, JVM batch jobs | `references/builders/java-builder.md` |
+| Laravel, WordPress, or PHP server-side scripts | `references/builders/php-builder.md` |
+| Standalone SQL migrations, queries, and schema management | `references/builders/sql-builder.md` |
+| Automation scripts, Rails/Sinatra web apps, or Rake tasks | `references/builders/ruby-builder.md` |
+| Windows Forms apps or existing VB.NET codebases | `references/builders/vb-net-builder.md` |
+| Statistical analysis, ggplot2 charts, or Quarto reports | `references/builders/r-builder.md` |
+| iOS/macOS apps, SwiftUI, or macOS command-line tools | `references/builders/swift-builder.md` |
+| Systems tools, CLI utilities, or WebAssembly targets | `references/builders/rust-builder.md` |
+| Single-binary CLI tools, REST APIs, or microservices | `references/builders/go-builder.md` |
+| Android apps, Ktor APIs, or Gradle build scripts | `references/builders/kotlin-builder.md` |
+| Phoenix web APIs, real-time features, or distributed services | `references/builders/elixir-builder.md` |
+| Spark data pipelines, functional JVM, or Akka systems | `references/builders/scala-builder.md` |
+| Roblox scripts, Love2D games, or Neovim plugin config | `references/builders/lua-builder.md` |
 | Hardening, audit, risky automation, secrets, or high-impact operations | `references/builders/security-builder.md` |
 | No-code, admin, or office-heavy request with no explicit language | `references/builders/office-script-builder.md` first |
 
@@ -220,6 +250,21 @@ The builders are routers. The depth for code generation lives in two layers load
   - [references/patterns/typescript-node-patterns.md](references/patterns/typescript-node-patterns.md)
   - [references/patterns/bash-shell-patterns.md](references/patterns/bash-shell-patterns.md)
   - [references/patterns/react-patterns.md](references/patterns/react-patterns.md)
+  - [references/patterns/c-cpp-patterns.md](references/patterns/c-cpp-patterns.md)
+  - [references/patterns/csharp-patterns.md](references/patterns/csharp-patterns.md)
+  - [references/patterns/java-patterns.md](references/patterns/java-patterns.md)
+  - [references/patterns/php-patterns.md](references/patterns/php-patterns.md)
+  - [references/patterns/sql-patterns.md](references/patterns/sql-patterns.md)
+  - [references/patterns/ruby-patterns.md](references/patterns/ruby-patterns.md)
+  - [references/patterns/vb-net-patterns.md](references/patterns/vb-net-patterns.md)
+  - [references/patterns/r-patterns.md](references/patterns/r-patterns.md)
+  - [references/patterns/swift-patterns.md](references/patterns/swift-patterns.md)
+  - [references/patterns/rust-patterns.md](references/patterns/rust-patterns.md)
+  - [references/patterns/go-patterns.md](references/patterns/go-patterns.md)
+  - [references/patterns/kotlin-patterns.md](references/patterns/kotlin-patterns.md)
+  - [references/patterns/elixir-patterns.md](references/patterns/elixir-patterns.md)
+  - [references/patterns/scala-patterns.md](references/patterns/scala-patterns.md)
+  - [references/patterns/lua-patterns.md](references/patterns/lua-patterns.md)
 
 - **Recipes** — end-to-end solutions with code, run steps, validation, and rollback:
   - [references/recipes/dedup-workbook.md](references/recipes/dedup-workbook.md) (VBA)
@@ -233,6 +278,11 @@ The builders are routers. The depth for code generation lives in two layers load
   - [references/recipes/outlook-send-confirmed.md](references/recipes/outlook-send-confirmed.md) (VBA + PowerShell)
   - [references/recipes/kpi-dashboard.md](references/recipes/kpi-dashboard.md) (HTML/CSS/JS)
   - [references/recipes/react-kpi-dashboard.md](references/recipes/react-kpi-dashboard.md) (Vite React)
+  - [references/recipes/csharp-excel-report.md](references/recipes/csharp-excel-report.md) (C# + EPPlus)
+  - [references/recipes/r-csv-report.md](references/recipes/r-csv-report.md) (R + Quarto)
+  - [references/recipes/go-cli-tool.md](references/recipes/go-cli-tool.md) (Go single-binary CLI)
+  - [references/recipes/ruby-file-organizer.md](references/recipes/ruby-file-organizer.md) (Ruby file automation)
+  - [references/recipes/sql-migration.md](references/recipes/sql-migration.md) (SQL UP+DOWN migration)
 
 Each builder links to its matching pattern and recipes under a **Deep References** section so progressive-disclosure runtimes (Claude Skills, ChatGPT knowledge files) load only what the task needs.
 

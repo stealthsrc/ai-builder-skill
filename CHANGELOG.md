@@ -8,6 +8,44 @@ The format is inspired by Keep a Changelog and the version labels in this file a
 
 - No unreleased changes yet.
 
+## [0.6.0] - 2026-04-17
+
+### Added
+
+- Sixteen new language builders covering the full programming language spectrum:
+  - `references/builders/c-cpp-builder.md` — C and C++ systems, embedded, CLI
+  - `references/builders/csharp-builder.md` — .NET 8, Windows Forms, ASP.NET Core, VSTO, Unity
+  - `references/builders/java-builder.md` — Spring Boot, Android, enterprise JVM
+  - `references/builders/php-builder.md` — Laravel, WordPress, server-side scripts
+  - `references/builders/sql-builder.md` — standalone SQL migrations, reporting queries, schema management
+  - `references/builders/ruby-builder.md` — automation scripts, Rails, Sinatra, Rake
+  - `references/builders/vb-net-builder.md` — Windows Forms, legacy VB.NET maintenance
+  - `references/builders/r-builder.md` — statistical analysis, ggplot2, Quarto reports
+  - `references/builders/swift-builder.md` — iOS/macOS apps, SwiftUI, CLI tools
+  - `references/builders/rust-builder.md` — systems tools, CLI, WebAssembly
+  - `references/builders/go-builder.md` — CLI tools, REST APIs, single-binary cross-platform tools
+  - `references/builders/kotlin-builder.md` — Android, Ktor, Gradle, Kotlin Multiplatform
+  - `references/builders/elixir-builder.md` — Phoenix, LiveView, GenServer, Broadway
+  - `references/builders/scala-builder.md` — Spark, ZIO, functional JVM, Akka
+  - `references/builders/lua-builder.md` — Roblox/Luau, Love2D, Neovim plugins, embedded Lua
+  - `references/builders/objective-c-builder.md` — legacy iOS/macOS maintenance guide
+
+- Fifteen new pattern libraries (one per builder, excluding Objective-C):
+  `c-cpp-patterns.md`, `csharp-patterns.md`, `java-patterns.md`, `php-patterns.md`, `sql-patterns.md`, `ruby-patterns.md`, `vb-net-patterns.md`, `r-patterns.md`, `swift-patterns.md`, `rust-patterns.md`, `go-patterns.md`, `kotlin-patterns.md`, `elixir-patterns.md`, `scala-patterns.md`, `lua-patterns.md`
+
+- Five new recipes:
+  - `references/recipes/csharp-excel-report.md` — EPPlus formatted Excel from CSV
+  - `references/recipes/r-csv-report.md` — Quarto HTML report with ggplot2 bar chart
+  - `references/recipes/go-cli-tool.md` — Go CSV folder aggregator with cobra
+  - `references/recipes/ruby-file-organizer.md` — Ruby file organizer by date with rollback CSV
+  - `references/recipes/sql-migration.md` — versioned UP/DOWN migration with shell apply script
+
+### Changed
+
+- `SKILL.md` routing table expanded to cover all 25 builders
+- `scripts/validate_repo.py` REQUIRED_FILES extended with all 36 new files
+- `eval/routing-cases.json` expanded from 24 to 33 cases with new builder routing fixtures
+
 ## [0.5.0] - 2026-04-16
 
 ### Added

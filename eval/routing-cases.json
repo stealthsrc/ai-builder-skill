@@ -301,5 +301,113 @@
     ],
     "expected_risk_flags": [],
     "notes": "React dashboard with CSV input should load React patterns and the React KPI recipe."
+  },
+  {
+    "id": "csharp-excel-report",
+    "prompt": "Write a .NET 8 C# console app that reads CSV files from a folder and generates a formatted Excel report.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/csharp-builder.md",
+    "required_references": [
+      "references/patterns/csharp-patterns.md",
+      "references/recipes/csharp-excel-report.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "C# Excel output should load EPPlus patterns and the csharp-excel-report recipe."
+  },
+  {
+    "id": "r-csv-statistical-report",
+    "prompt": "Analyze this CSV of sales data with R and generate an HTML report with a bar chart and summary table.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/r-builder.md",
+    "required_references": [
+      "references/patterns/r-patterns.md",
+      "references/recipes/r-csv-report.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "R analysis with Quarto report should load R patterns and the r-csv-report recipe."
+  },
+  {
+    "id": "go-csv-aggregator-cli",
+    "prompt": "Build a Go CLI tool that reads all CSV files in a folder and outputs a JSON summary aggregated by region.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/go-builder.md",
+    "required_references": [
+      "references/patterns/go-patterns.md",
+      "references/recipes/go-cli-tool.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Go CLI with CSV aggregation should load Go patterns and the go-cli-tool recipe."
+  },
+  {
+    "id": "ruby-file-organizer-script",
+    "prompt": "Write a Ruby script that organizes exported files into monthly folders by last-modified date with a dry-run option.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/ruby-builder.md",
+    "required_references": [
+      "references/patterns/ruby-patterns.md",
+      "references/recipes/ruby-file-organizer.md"
+    ],
+    "expected_risk_flags": [
+      "destructive-file-op"
+    ],
+    "notes": "Ruby file organization should load Ruby patterns and the ruby-file-organizer recipe."
+  },
+  {
+    "id": "sql-schema-migration",
+    "prompt": "Write a SQL migration to add a status column to the invoices table with a rollback script for PostgreSQL.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/sql-builder.md",
+    "required_references": [
+      "references/patterns/sql-patterns.md",
+      "references/recipes/sql-migration.md"
+    ],
+    "expected_risk_flags": [
+      "destructive-file-op"
+    ],
+    "notes": "SQL migration should load SQL patterns and the sql-migration recipe with UP+DOWN scripts."
+  },
+  {
+    "id": "java-spring-boot-api",
+    "prompt": "Build a Spring Boot REST API endpoint that reads invoices from a database and returns them as JSON.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/java-builder.md",
+    "required_references": [
+      "references/patterns/java-patterns.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Java Spring Boot API should load Java patterns including JDBC safe query and logging idioms."
+  },
+  {
+    "id": "rust-csv-cli",
+    "prompt": "Write a Rust CLI tool using clap that reads a CSV file, filters rows by amount, and outputs a JSON report.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/rust-builder.md",
+    "required_references": [
+      "references/patterns/rust-patterns.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Rust CLI should load Rust patterns for clap, anyhow error handling, and serde CSV."
+  },
+  {
+    "id": "elixir-phoenix-api",
+    "prompt": "Create a Phoenix JSON API endpoint in Elixir that queries invoices from the database and returns them filtered by region.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/elixir-builder.md",
+    "required_references": [
+      "references/patterns/elixir-patterns.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Elixir Phoenix API should load Elixir patterns for Ecto parameterized queries and controller structure."
+  },
+  {
+    "id": "lua-roblox-game-script",
+    "prompt": "Write a Roblox Luau script that tracks player scores in a leaderboard stored as a ModuleScript.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/lua-builder.md",
+    "required_references": [
+      "references/patterns/lua-patterns.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Roblox script should load Lua patterns for module pattern, task library, and nil safety."
   }
 ]
