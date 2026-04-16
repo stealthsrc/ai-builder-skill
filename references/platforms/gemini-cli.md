@@ -1,6 +1,6 @@
 # Gemini CLI
 
-Use this reference when the repository should work well in Gemini CLI or when the user mentions Gemini CLI, `GEMINI.md`, or Google’s terminal agent workflow.
+Use this reference when the repository should work well in Gemini CLI or when the user mentions Gemini CLI, `GEMINI.md`, or Google's terminal agent workflow.
 
 ## Key Model For This Repository
 
@@ -19,7 +19,7 @@ Gemini CLI can be aligned with this repository in two practical ways:
 
 ### Option 1. Use `GEMINI.md` and import or mirror repo guidance
 
-Keep a project `GEMINI.md` that points at the repo’s main instructions.
+Keep a project `GEMINI.md` that points at the repo's main instructions.
 
 ### Option 2. Configure Gemini CLI to also read `AGENTS.md`
 

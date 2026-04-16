@@ -8,6 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = [
     ROOT / "AGENTS.md",
+    ROOT / "CLAUDE.md",
+    ROOT / "GEMINI.md",
     ROOT / "SKILL.md",
     ROOT / "README.md",
     ROOT / "LICENSE",
@@ -42,12 +44,15 @@ MARKDOWN_FILES = [
     ROOT / "README.md",
     ROOT / "SKILL.md",
     ROOT / "AGENTS.md",
+    ROOT / "CLAUDE.md",
+    ROOT / "GEMINI.md",
     *ROOT.glob("references/**/*.md"),
     *ROOT.glob("examples/**/*.md"),
 ]
 
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 HTML_SRC_RE = re.compile(r"""<(?:img|source)[^>]+(?:src|srcset)=["']([^"']+)["']""")
+AT_INCLUDE_RE = re.compile(r"(?m)^@([^\s]+)")
 
 
 def fail(message: str) -> None:
@@ -104,11 +109,25 @@ def check_links() -> None:
                     )
 
 
+def check_context_imports() -> None:
+    for context_file in (ROOT / "CLAUDE.md", ROOT / "GEMINI.md"):
+        content = context_file.read_text(encoding="utf-8")
+        for match in AT_INCLUDE_RE.findall(content):
+            candidate = normalize_target(context_file, match)
+            if candidate is None:
+                continue
+            if not candidate.exists():
+                fail(
+                    f"Broken context import in {context_file.relative_to(ROOT)}: {match}"
+                )
+
+
 def main() -> None:
     check_required_files()
     check_skill_frontmatter()
     check_openai_yaml()
     check_links()
+    check_context_imports()
     print("[OK] Repository structure and local links are valid.")
 
 
