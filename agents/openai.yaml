@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Builder"
+  short_description: "Business automation and secure scripting workflows"
+  default_prompt: "Use $ai-builder to choose the smallest viable implementation for this automation request."

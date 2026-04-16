@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Sales KPI Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="dashboard">
+    <header class="hero">
+      <p class="eyebrow">Internal KPI Tool</p>
+      <h1>Weekly Sales Overview</h1>
+      <p class="subtitle">A lightweight browser dashboard built with plain HTML, CSS, and JavaScript.</p>
+    </header>
+
+    <section class="controls card">
+      <label for="week-select">Week</label>
+      <select id="week-select"></select>
+    </section>
+
+    <section class="metrics">
+      <article class="metric card">
+        <span class="metric-label">Revenue</span>
+        <strong id="revenue-value">$0</strong>
+      </article>
+      <article class="metric card">
+        <span class="metric-label">Deals</span>
+        <strong id="deals-value">0</strong>
+      </article>
+      <article class="metric card">
+        <span class="metric-label">Conversion</span>
+        <strong id="conversion-value">0%</strong>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>Region Breakdown</h2>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Revenue</th>
+            <th>Deals</th>
+          </tr>
+        </thead>
+        <tbody id="region-table-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

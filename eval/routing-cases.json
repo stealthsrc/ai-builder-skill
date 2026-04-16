@@ -1,0 +1,93 @@
+[
+  {
+    "id": "excel-cleanup-vba",
+    "prompt": "Clean this workbook, remove blank rows, trim invoice IDs, and highlight duplicate invoice numbers.",
+    "expected_primary_builder": "references/builders/vba-builder.md",
+    "required_references": [
+      "references/builders/office-script-builder.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Workbook-native task should stay in Office."
+  },
+  {
+    "id": "windows-rename-powershell",
+    "prompt": "Use PowerShell on Windows to rename all PDFs in this folder using the date in each filename.",
+    "expected_primary_builder": "references/builders/powershell-builder.md",
+    "required_references": [
+      "references/builders/office-script-builder.md",
+      "references/rules/security-baseline.md"
+    ],
+    "expected_risk_flags": [
+      "bulk-file-rename"
+    ],
+    "notes": "Windows-native file automation with preview expectations."
+  },
+  {
+    "id": "csv-report-python",
+    "prompt": "Merge these CSV exports and generate a report that opens cleanly in Excel.",
+    "expected_primary_builder": "references/builders/python-builder.md",
+    "required_references": [
+      "references/builders/office-script-builder.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Cross-file structured data work should prefer Python."
+  },
+  {
+    "id": "browser-dashboard-plain-web",
+    "prompt": "Build a plain HTML/CSS/JavaScript internal dashboard, no framework, mobile-friendly.",
+    "expected_primary_builder": "references/builders/html-css-javascript-builder.md",
+    "required_references": [],
+    "expected_risk_flags": [],
+    "notes": "Static browser tool with no framework request."
+  },
+  {
+    "id": "macro-hardening",
+    "prompt": "Fix this existing VBA macro and make it safer before it sends Outlook emails.",
+    "expected_primary_builder": "references/builders/security-builder.md",
+    "required_references": [
+      "references/builders/vba-builder.md",
+      "references/rules/security-baseline.md"
+    ],
+    "expected_risk_flags": [
+      "email-send",
+      "macro-risk"
+    ],
+    "notes": "Security-first because the task is explicit hardening."
+  },
+  {
+    "id": "powershell-hardening",
+    "prompt": "Review this PowerShell script for dangerous patterns and harden it before it touches production files.",
+    "expected_primary_builder": "references/builders/security-builder.md",
+    "required_references": [
+      "references/builders/powershell-builder.md",
+      "references/rules/security-baseline.md"
+    ],
+    "expected_risk_flags": [
+      "destructive-file-op",
+      "unsafe-command-execution"
+    ],
+    "notes": "Security layer should lead the response."
+  },
+  {
+    "id": "browser-form-with-sensitive-input",
+    "prompt": "Create a browser-based form where staff can paste client rows and export a cleaned CSV.",
+    "expected_primary_builder": "references/builders/html-css-javascript-builder.md",
+    "required_references": [
+      "references/rules/security-baseline.md"
+    ],
+    "expected_risk_flags": [
+      "untrusted-input"
+    ],
+    "notes": "Frontend route plus input safety."
+  },
+  {
+    "id": "ambiguous-finance-workflow",
+    "prompt": "Automate this weekly finance reporting workflow for me. Inputs are CSV exports and the result should be reusable next month.",
+    "expected_primary_builder": "references/builders/python-builder.md",
+    "required_references": [
+      "references/builders/office-script-builder.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Ambiguous request should still route toward maintainable data processing."
+  }
+]

@@ -1,0 +1,61 @@
+:root {
+  --bg: #f6f1e8;
+  --surface: #fffdf8;
+  --text: #17333a;
+  --muted: #607075;
+  --accent: #1f766c;
+  --border: #d9cfbf;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  width: min(960px, calc(100% - 2rem));
+  margin: 2rem auto 3rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+textarea,
+button,
+pre {
+  font: inherit;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+button {
+  margin-top: 0.8rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+pre {
+  white-space: pre-wrap;
+  color: var(--muted);
+}

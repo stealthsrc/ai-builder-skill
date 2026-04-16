@@ -18,6 +18,7 @@ Expected structure:
 - `SKILL.md` -> main skill hub and canonical high-level instruction source
 - `references/builders/` -> specialized builder references such as `html-css-javascript-builder.md`, `vba-builder.md`, `powershell-builder.md`, `python-builder.md`
 - `references/rules/` -> routing rules, output rules, and shared conventions
+- `references/rules/` may also include risk classification aids such as trigger matrices
 - `references/templates/` -> reusable templates for future builders or derived skills
 
 Codex should treat this repository as a **hub-and-references architecture**, not as a multi-folder native skill library.

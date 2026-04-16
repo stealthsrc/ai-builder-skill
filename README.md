@@ -108,15 +108,33 @@ For more concrete routing examples, see [examples/concrete-use-cases.md](example
 
 ```text
 .
+|-- .github/
+|   `-- workflows/
+|       `-- ci.yml
 |-- AGENTS.md
 |-- LICENSE
 |-- README.md
 |-- SKILL.md
+|-- agents/
+|   `-- openai.yaml
 |-- assets/
 |   |-- ai-builder-banner.svg
 |   `-- ai-builder-social-preview.svg
+|   `-- starters/
+|       |-- html-tool/
+|       |-- powershell-script/
+|       |-- python-cli/
+|       `-- vba-module/
+|-- eval/
+|   `-- routing-cases.json
 |-- examples/
-|   `-- concrete-use-cases.md
+|   |-- browser-kpi-tool/
+|   |-- concrete-use-cases.md
+|   |-- prompt-cookbook.md
+|   |-- security/
+|   |-- powershell/
+|   |-- python/
+|   `-- vba/
 `-- references/
     |-- builders/
     |   |-- html-css-javascript-builder.md
@@ -127,9 +145,13 @@ For more concrete routing examples, see [examples/concrete-use-cases.md](example
     |   `-- vba-builder.md
     |-- rules/
     |   |-- output-and-safety.md
+    |   |-- risk-trigger-matrix.md
     |   `-- security-baseline.md
     `-- templates/
         `-- builder-template.md
+|-- scripts/
+|   |-- check_eval_cases.py
+|   `-- validate_repo.py
 ```
 
 ## Start Here
@@ -140,6 +162,72 @@ If you are using this repository as a skill source:
 2. Read [references/builders/office-script-builder.md](references/builders/office-script-builder.md) for office-heavy and admin-heavy routing.
 3. Load the matching builder for the request.
 4. Load [references/rules/security-baseline.md](references/rules/security-baseline.md) when the task touches risky operations.
+5. Load [references/rules/risk-trigger-matrix.md](references/rules/risk-trigger-matrix.md) if the risk is implicit or mixed.
+
+## Install
+
+Use the repository in the simplest way your AI tool supports:
+
+### Codex-style project instructions
+
+- keep the repository as-is in your working context, or
+- reuse [AGENTS.md](AGENTS.md) and [SKILL.md](SKILL.md) in the project where you want the routing behavior
+
+### Claude-style local skills
+
+- point Claude at the repository root as a local skill source
+- load `SKILL.md` as the primary instruction file
+- keep the `references/` directory available alongside it
+
+### Cursor or editor-agent workflows
+
+- use the repository as project context or copy the relevant files into your workspace rules setup
+- keep `references/builders/` and `references/rules/` intact so routing and safety remain discoverable
+
+### Generic AI setup
+
+- start with [SKILL.md](SKILL.md)
+- add [AGENTS.md](AGENTS.md) when the tool supports persistent repo instructions
+- keep [references/](references) available so the assistant can load only what it needs
+
+## Distribution Metadata
+
+This repository now ships UI-facing metadata for skill-aware platforms in [agents/openai.yaml](agents/openai.yaml).
+
+That file is intended for harnesses and skill lists, while [SKILL.md](SKILL.md) remains the canonical behavior layer.
+
+## Examples And Starters
+
+### Executable examples
+
+- [examples/vba/clean-invoices.bas](examples/vba/clean-invoices.bas)
+- [examples/powershell/rename-pdfs-by-date.ps1](examples/powershell/rename-pdfs-by-date.ps1)
+- [examples/python/merge-csv-report.py](examples/python/merge-csv-report.py)
+- [examples/browser-kpi-tool/](examples/browser-kpi-tool)
+- [examples/security/unsafe-to-safe.md](examples/security/unsafe-to-safe.md)
+
+### Prompt guidance
+
+- [examples/prompt-cookbook.md](examples/prompt-cookbook.md)
+- [examples/concrete-use-cases.md](examples/concrete-use-cases.md)
+
+### Starter kits
+
+- [assets/starters/html-tool/](assets/starters/html-tool)
+- [assets/starters/python-cli/](assets/starters/python-cli)
+- [assets/starters/powershell-script/](assets/starters/powershell-script)
+- [assets/starters/vba-module/](assets/starters/vba-module)
+
+## Evaluation And CI
+
+The repository now includes:
+
+- routing fixtures in [eval/routing-cases.json](eval/routing-cases.json)
+- repository validation in [scripts/validate_repo.py](scripts/validate_repo.py)
+- evaluation fixture validation in [scripts/check_eval_cases.py](scripts/check_eval_cases.py)
+- GitHub Actions CI in [.github/workflows/ci.yml](.github/workflows/ci.yml)
+
+The goal is simple: make the skill testable as a routing system, not just readable as documentation.
 
 ## Who This Is For
 
@@ -165,7 +253,7 @@ Likely next extensions:
 - richer Office-specific security guidance
 - reusable static frontend patterns and examples
 - more concrete VBA, PowerShell, Python, and browser-tool workflows
-- installation notes for multiple AI tooling environments
+- stronger install adapters for multiple AI tooling environments
 - audit-oriented references for no-code and connector-heavy operations
 
 ## License
