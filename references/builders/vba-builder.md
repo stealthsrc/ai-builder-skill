@@ -30,3 +30,11 @@ Use this reference for Office desktop macros and maintenance of existing VBA cod
 - State what sheets, ranges, files, or messages will be modified.
 - When deleting or rewriting data, prefer a preview mode or a backup sheet if the extra complexity is small.
 - Include a simple validation path such as checking row counts, created sheets, or exported files.
+
+## Deep References
+
+Load these when the task is non-trivial:
+
+- [../patterns/vba-patterns.md](../patterns/vba-patterns.md) — module skeleton, state save and restore, 2D array idioms, bottom-up delete, dedup with `Scripting.Dictionary`, late binding, Outlook safe send, anti-patterns.
+- [../recipes/dedup-workbook.md](../recipes/dedup-workbook.md) — complete dedup-by-key macro with preview sheet and rollback plan.
+- [../recipes/outlook-send-confirmed.md](../recipes/outlook-send-confirmed.md) — batch Outlook send with a rotating confirmation token.

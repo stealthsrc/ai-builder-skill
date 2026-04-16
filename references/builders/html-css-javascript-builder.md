@@ -39,3 +39,10 @@ Use this reference for lightweight browser-based tools and no-framework frontend
 - Keep configuration visible and easy to edit.
 - Explain exactly how to open or serve the page locally.
 - Include a quick validation path, especially for forms, responsive layout, and JavaScript actions.
+
+## Deep References
+
+Load these when the task is non-trivial:
+
+- [../patterns/html-js-patterns.md](../patterns/html-js-patterns.md) — three-file starter with CSP, CSS variables theme with dark and light modes, mobile-first responsive grid, safe DOM with `textContent` and `replaceChildren`, CSV parse and export with Excel-friendly BOM, safe `localStorage` wrapper, form validation with HTML validity API, fetch with timeout via `AbortController`, anti-patterns.
+- [../recipes/kpi-dashboard.md](../recipes/kpi-dashboard.md) — full static dashboard that reads a CSV via drag-and-drop, renders KPI cards, and draws a line chart in a plain `<canvas>`.

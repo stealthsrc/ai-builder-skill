@@ -1,11 +1,10 @@
-<p align="center">
-  <img src="assets/ai-builder-banner.svg" alt="AI Builder banner" width="100%">
-</p>
+# ai-builder-skill
 
 <p align="center">
   <a href="https://github.com/StealthyLabsHQ/ai-builder-skill/blob/main/LICENSE"><img src="https://img.shields.io/github/license/StealthyLabsHQ/ai-builder-skill?style=flat-square" alt="MIT License"></a>
-  <img src="https://img.shields.io/badge/routing-VBA%20%7C%20PowerShell%20%7C%20Python%20%7C%20HTML%2FCSS%2FJS-16333B?style=flat-square" alt="Routing badge">
-  <img src="https://img.shields.io/badge/focus-business%20automation%20%2B%20security-1F766C?style=flat-square" alt="Focus badge">
+  <img src="https://img.shields.io/badge/runtimes-Codex%20%7C%20Claude%20Code%20%7C%20Claude%20Web%20%7C%20ChatGPT%20%7C%20Gemini%20CLI%20%7C%20Antigravity-16333B?style=flat-square" alt="Runtimes badge">
+  <img src="https://img.shields.io/badge/routing-VBA%20%7C%20PowerShell%20%7C%20Python%20%7C%20HTML%2FCSS%2FJS-1F766C?style=flat-square" alt="Routing badge">
+  <img src="https://img.shields.io/badge/focus-business%20automation%20%2B%20security-5B2A86?style=flat-square" alt="Focus badge">
 </p>
 
 <p align="center">
@@ -108,14 +107,18 @@ For more concrete routing examples, see [examples/concrete-use-cases.md](example
 
 ```text
 .
-|-- .github/
-|   `-- workflows/
-|       `-- ci.yml
+|-- .github/workflows/ci.yml
+|-- .antigravity/
+|   |-- commands/ai-builder.md
+|   |-- rules/ai-builder.md
+|   `-- settings.example.json
 |-- .claude/
+|   |-- commands/ai-builder.md
+|   |-- skills/ai-builder/SKILL.md
 |   `-- settings.example.json
-|-- .gemini/
-|   `-- settings.example.json
+|-- .gemini/settings.example.json
 |-- AGENTS.md
+|-- ANTIGRAVITY.md
 |-- CHANGELOG.md
 |-- CLAUDE.md
 |-- CLAUDE.local.example.md
@@ -124,51 +127,99 @@ For more concrete routing examples, see [examples/concrete-use-cases.md](example
 |-- LICENSE
 |-- README.md
 |-- SKILL.md
-|-- agents/
-|   `-- openai.yaml
-|-- assets/
-|   |-- ai-builder-banner.svg
-|   `-- ai-builder-social-preview.svg
-|   `-- starters/
-|       |-- html-tool/
-|       |-- powershell-script/
-|       |-- python-cli/
-|       `-- vba-module/
-|-- eval/
-|   `-- routing-cases.json
+|-- agents/openai.yaml
+|-- assets/starters/
+|   |-- html-tool/
+|   |-- powershell-script/
+|   |-- python-cli/
+|   `-- vba-module/
+|-- dist/
+|   `-- chatgpt-custom-gpt.md
+|-- eval/routing-cases.json
 |-- examples/
 |   |-- browser-kpi-tool/
 |   |-- concrete-use-cases.md
 |   |-- prompt-cookbook.md
-|   |-- security/
 |   |-- powershell/
 |   |-- python/
+|   |-- security/
 |   `-- vba/
-`-- references/
-    |-- builders/
-    |   |-- html-css-javascript-builder.md
-    |   |-- office-script-builder.md
-    |   |-- powershell-builder.md
-    |   |-- python-builder.md
-    |   |-- security-builder.md
-    |   `-- vba-builder.md
-    |-- platforms/
-    |   |-- claude-code-hooks.md
-    |   |-- claude-code.md
-    |   |-- codex-claude-gemini-crosswalk.md
-    |   |-- codex-task-shaping.md
-    |   |-- codex.md
-    |   `-- gemini-cli.md
-    |-- rules/
-    |   |-- output-and-safety.md
-    |   |-- risk-trigger-matrix.md
-    |   `-- security-baseline.md
-    `-- templates/
-        `-- builder-template.md
-|-- scripts/
-|   |-- check_eval_cases.py
-|   `-- validate_repo.py
+|-- references/
+|   |-- builders/
+|   |   |-- html-css-javascript-builder.md
+|   |   |-- office-script-builder.md
+|   |   |-- powershell-builder.md
+|   |   |-- python-builder.md
+|   |   |-- security-builder.md
+|   |   `-- vba-builder.md
+|   |-- patterns/
+|   |   |-- html-js-patterns.md
+|   |   |-- powershell-patterns.md
+|   |   |-- python-patterns.md
+|   |   `-- vba-patterns.md
+|   |-- recipes/
+|   |   |-- archive-by-date.md
+|   |   |-- bulk-rename-safe.md
+|   |   |-- csv-merge-excel-ready.md
+|   |   |-- dedup-workbook.md
+|   |   |-- kpi-dashboard.md
+|   |   `-- outlook-send-confirmed.md
+|   |-- platforms/
+|   |   |-- antigravity.md
+|   |   |-- chatgpt.md
+|   |   |-- claude-code-hooks.md
+|   |   |-- claude-code.md
+|   |   |-- claude-web.md
+|   |   |-- codex-claude-gemini-crosswalk.md
+|   |   |-- codex-task-shaping.md
+|   |   |-- codex.md
+|   |   `-- gemini-cli.md
+|   |-- rules/
+|   |   |-- output-and-safety.md
+|   |   |-- risk-trigger-matrix.md
+|   |   `-- security-baseline.md
+|   `-- templates/builder-template.md
+|-- release-notes/
+`-- scripts/
+    |-- build_skill_bundle.py
+    |-- check_eval_cases.py
+    `-- validate_repo.py
 ```
+
+## Patterns And Recipes
+
+The builders are routers. The depth for code generation lives in two layers loaded on demand:
+
+- **Patterns** — one file per language with skeletons, idioms, and anti-patterns:
+  - [references/patterns/vba-patterns.md](references/patterns/vba-patterns.md)
+  - [references/patterns/powershell-patterns.md](references/patterns/powershell-patterns.md)
+  - [references/patterns/python-patterns.md](references/patterns/python-patterns.md)
+  - [references/patterns/html-js-patterns.md](references/patterns/html-js-patterns.md)
+
+- **Recipes** — end-to-end solutions with code, run steps, validation, and rollback:
+  - [references/recipes/dedup-workbook.md](references/recipes/dedup-workbook.md) (VBA)
+  - [references/recipes/bulk-rename-safe.md](references/recipes/bulk-rename-safe.md) (PowerShell)
+  - [references/recipes/csv-merge-excel-ready.md](references/recipes/csv-merge-excel-ready.md) (Python)
+  - [references/recipes/outlook-send-confirmed.md](references/recipes/outlook-send-confirmed.md) (VBA + PowerShell)
+  - [references/recipes/kpi-dashboard.md](references/recipes/kpi-dashboard.md) (HTML/CSS/JS)
+  - [references/recipes/archive-by-date.md](references/recipes/archive-by-date.md) (PowerShell)
+
+Each builder links to its matching pattern and recipes under a **Deep References** section so progressive-disclosure runtimes (Claude Skills, ChatGPT knowledge files) load only what the task needs.
+
+## Multi-Runtime Support
+
+This repository is designed to run cleanly across six AI runtimes behind one routing hub:
+
+| Runtime | Entry point | Adapter |
+|---|---|---|
+| Codex CLI | `AGENTS.md` | native |
+| Claude Code | `CLAUDE.md` imports `@AGENTS.md` | `.claude/skills/ai-builder/`, `.claude/commands/ai-builder.md` |
+| Claude Web Skills | `SKILL.md` bundle | `scripts/build_skill_bundle.py` → `dist/ai-builder.zip` |
+| ChatGPT | `agents/openai.yaml` + `dist/chatgpt-custom-gpt.md` | paste-ready Custom GPT system prompt |
+| Gemini CLI | `GEMINI.md` or `context.fileName` | `.gemini/settings.example.json` |
+| Antigravity (Google) | `AGENTS.md` + `ANTIGRAVITY.md` | `.antigravity/rules/`, `.antigravity/commands/` |
+
+See [references/platforms/codex-claude-gemini-crosswalk.md](references/platforms/codex-claude-gemini-crosswalk.md) for the full mapping.
 
 ## Start Here
 
@@ -177,8 +228,10 @@ If you are using this repository as a skill source:
 1. Read [SKILL.md](SKILL.md) for the orchestration logic.
 2. Read [references/builders/office-script-builder.md](references/builders/office-script-builder.md) for office-heavy and admin-heavy routing.
 3. Load the matching builder for the request.
-4. Load [references/rules/security-baseline.md](references/rules/security-baseline.md) when the task touches risky operations.
-5. Load [references/rules/risk-trigger-matrix.md](references/rules/risk-trigger-matrix.md) if the risk is implicit or mixed.
+4. Load the matching file under [references/patterns/](references/patterns) when the task is non-trivial.
+5. Load the matching recipe under [references/recipes/](references/recipes) when the task matches one of the end-to-end templates.
+6. Load [references/rules/security-baseline.md](references/rules/security-baseline.md) when the task touches risky operations.
+7. Load [references/rules/risk-trigger-matrix.md](references/rules/risk-trigger-matrix.md) if the risk is implicit or mixed.
 
 ## Install
 
@@ -322,13 +375,6 @@ AI Builder is especially useful for:
 - Windows admins and power users
 - founders automating internal workflows
 - AI users who want practical scripts instead of generic prompt bundles
-
-## Visual Assets
-
-The repository includes:
-
-- [assets/ai-builder-banner.svg](assets/ai-builder-banner.svg) for the README hero
-- [assets/ai-builder-social-preview.svg](assets/ai-builder-social-preview.svg) as a ready-made social preview asset for GitHub repo settings
 
 ## Roadmap Direction
 

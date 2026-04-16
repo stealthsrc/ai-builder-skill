@@ -174,5 +174,70 @@
       "unsafe-command-execution"
     ],
     "notes": "Codex task-shaping should surface validation steps alongside the hardened script."
+  },
+  {
+    "id": "pattern-vba-dedup",
+    "prompt": "Write a VBA macro that removes duplicate invoice rows from a sheet keeping the first occurrence.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/vba-builder.md",
+    "required_references": [
+      "references/patterns/vba-patterns.md",
+      "references/recipes/dedup-workbook.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Non-trivial VBA should load the patterns file and the dedup recipe."
+  },
+  {
+    "id": "pattern-powershell-rename",
+    "prompt": "Rename every PDF in D:\\Exports by prefix and give me a preview first.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/powershell-builder.md",
+    "required_references": [
+      "references/patterns/powershell-patterns.md",
+      "references/recipes/bulk-rename-safe.md",
+      "references/rules/security-baseline.md"
+    ],
+    "expected_risk_flags": [
+      "bulk-file-rename"
+    ],
+    "notes": "Destructive rename should load the ShouldProcess pattern and the safe rename recipe."
+  },
+  {
+    "id": "pattern-python-csv-merge",
+    "prompt": "Merge all weekly CSV exports in one folder into a formatted Excel report with a frozen header.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/python-builder.md",
+    "required_references": [
+      "references/patterns/python-patterns.md",
+      "references/recipes/csv-merge-excel-ready.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Excel-ready merge should load the CSV encoding pattern and the merge recipe."
+  },
+  {
+    "id": "pattern-html-kpi-dashboard",
+    "prompt": "Build a no-framework KPI dashboard that reads a CSV via drag-and-drop.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/html-css-javascript-builder.md",
+    "required_references": [
+      "references/patterns/html-js-patterns.md",
+      "references/recipes/kpi-dashboard.md"
+    ],
+    "expected_risk_flags": [],
+    "notes": "Static dashboard should load the HTML/JS patterns and the dashboard recipe."
+  },
+  {
+    "id": "pattern-powershell-archive",
+    "prompt": "Sweep old reports in D:\\Reports into monthly archive folders with a log.",
+    "platform": "any",
+    "expected_primary_builder": "references/builders/powershell-builder.md",
+    "required_references": [
+      "references/patterns/powershell-patterns.md",
+      "references/recipes/archive-by-date.md"
+    ],
+    "expected_risk_flags": [
+      "destructive-file-op"
+    ],
+    "notes": "File moves across directories must load the archive recipe and its rollback plan."
   }
 ]

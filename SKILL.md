@@ -38,6 +38,15 @@ Both entry points route to the same references under `references/`. Thin platfor
 - Use [references/builders/security-builder.md](references/builders/security-builder.md) when the task is to review, harden, or make safer an automation, or when the implementation will handle secrets, external content, or high-impact actions.
 - If the request is ambiguous, choose the smallest viable implementation, state the chosen language briefly, and keep assumptions explicit.
 
+## Deepen Before You Write
+
+When the task is non-trivial, load the matching pattern or recipe alongside the builder:
+
+- patterns live in [references/patterns/](references/patterns) — one file per language with idioms, skeletons, and anti-patterns
+- recipes live in [references/recipes/](references/recipes) — end-to-end solutions for common tasks (workbook dedup, bulk rename, CSV merge, Outlook send, KPI dashboard, monthly archive)
+
+Each builder links to its matching pattern and recipes under a "Deep References" section.
+
 ## Build The Answer
 
 - Prefer executable code over pseudo-code when the user asks for implementation.

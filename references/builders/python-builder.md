@@ -29,3 +29,10 @@ Use this reference for maintainable data workflows, reporting, and cross-file au
 - Explain the expected output files, folders, or report shape.
 - Call out common issues such as missing columns, encoding problems, locked Excel files, or absent dependencies.
 - Prefer readable console output so the user can verify progress quickly.
+
+## Deep References
+
+Load these when the task is non-trivial:
+
+- [../patterns/python-patterns.md](../patterns/python-patterns.md) — script skeleton with `argparse` and `logging`, Excel-friendly CSV idioms (`utf-8-sig`, `newline=""`), openpyxl and pandas trade-offs, atomic writes, safe subprocess, HTTP retries, anti-patterns.
+- [../recipes/csv-merge-excel-ready.md](../recipes/csv-merge-excel-ready.md) — merge many CSVs into one formatted `.xlsx` with frozen header, bold fill, and auto-width.

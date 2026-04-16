@@ -30,3 +30,12 @@ Use this reference for Windows-native automation, operational scripts, and COM a
 - If the script changes files, explain the expected before and after state.
 - Prefer `-WhatIf` semantics or an explicit dry-run mode when practical.
 - Call out common failure modes such as locked files, missing paths, or insufficient permissions.
+
+## Deep References
+
+Load these when the task is non-trivial:
+
+- [../patterns/powershell-patterns.md](../patterns/powershell-patterns.md) — script skeleton, `SupportsShouldProcess`, parameter validation attributes, COM release, splatting, pipeline functions, logging, safe external command execution, anti-patterns.
+- [../recipes/bulk-rename-safe.md](../recipes/bulk-rename-safe.md) — regex-based rename with `-WhatIf`, collision detection, and reversible map CSV.
+- [../recipes/archive-by-date.md](../recipes/archive-by-date.md) — sweep files into monthly folders with audit log and rollback path.
+- [../recipes/outlook-send-confirmed.md](../recipes/outlook-send-confirmed.md) — Outlook send with explicit confirmation token.
