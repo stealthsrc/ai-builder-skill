@@ -2,7 +2,7 @@
 
 Use this reference when the task handles secrets, external content, risky automation, or explicit hardening work.
 
-This baseline is adapted for the scope of this repository and informed by the external corpus at `StealthyLabsHQ/security-hardening`.
+This baseline is adapted for the scope of this repository and informed by the external corpus at `stealthsrc/security-hardening`.
 
 ## Universal Guardrails
 

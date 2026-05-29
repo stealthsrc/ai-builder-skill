@@ -1,7 +1,7 @@
 # ai-builder-skill
 
 <p align="center">
-  <a href="https://github.com/StealthyLabsHQ/ai-builder-skill/blob/main/LICENSE"><img src="https://img.shields.io/github/license/StealthyLabsHQ/ai-builder-skill?style=flat-square" alt="MIT License"></a>
+  <a href="https://github.com/stealthsrc/ai-builder-skill/blob/main/LICENSE"><img src="https://img.shields.io/github/license/stealthsrc/ai-builder-skill?style=flat-square" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/runtimes-Codex%20%7C%20Claude%20Code%20%7C%20Claude%20Web%20%7C%20ChatGPT%20%7C%20Gemini%20CLI%20%7C%20Antigravity-16333B?style=flat-square" alt="Runtimes badge">
   <img src="https://img.shields.io/badge/builders-25%20languages-1F766C?style=flat-square" alt="Routing badge">
   <img src="https://img.shields.io/badge/focus-business%20automation%20%2B%20security-5B2A86?style=flat-square" alt="Focus badge">
@@ -111,7 +111,7 @@ The repository includes a shared security baseline for tasks involving:
 - Office automation, email, exports, and PII-bearing flows
 - AI-assisted or agent-driven automation with untrusted input
 
-The security guidance is intentionally pragmatic and adapted from the excellent `StealthyLabsHQ/security-hardening` corpus to fit this narrower business-automation scope.
+The security guidance is intentionally pragmatic and adapted from the excellent `stealthsrc/security-hardening` corpus to fit this narrower business-automation scope.
 
 ## Example Requests
 
