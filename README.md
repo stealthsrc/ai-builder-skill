@@ -8,14 +8,14 @@
 </p>
 
 <p align="center">
-  A practical skill hub for Office automation, Windows scripting, lightweight browser tools, data workflows, and security-aware code generation.
+  Skill repository for Office automation, Windows scripting, browser tools, data workflows, and security-aware code generation.
 </p>
 
 ## What AI Builder Is
 
-AI Builder is a routing-first skill repository for practical automation work.
+AI Builder is a routing-first skill repository for automation tasks.
 
-It helps an AI assistant choose the right implementation path before code is written:
+Its routing table maps requests to implementation paths before code is written:
 
 - `HTML/CSS/JavaScript` for lightweight browser tools and static frontends
 - `VBA` for Office desktop macros and workbook logic
@@ -34,7 +34,7 @@ It helps an AI assistant choose the right implementation path before code is wri
 - `Visual Basic .NET` for Windows Forms apps and legacy .NET maintenance
 - `R` for statistical analysis, data visualization, and Quarto reports
 - `Swift` for iOS and macOS apps, SwiftUI, and macOS CLI tools
-- `Rust` for systems tools, high-performance CLI utilities, and WebAssembly
+- `Rust` for systems tools, performance-sensitive CLI utilities, and WebAssembly
 - `Go` for single-binary CLI tools, REST APIs, and microservices
 - `Kotlin` for Android apps, Ktor APIs, and Gradle build scripts
 - `Elixir` for Phoenix web APIs, real-time features, and fault-tolerant services
@@ -42,21 +42,21 @@ It helps an AI assistant choose the right implementation path before code is wri
 - `Lua` for Roblox game scripting, Love2D, Neovim plugins, and embedded scripting
 - `Security-first guidance` for risky or high-impact automation
 
-This repository is optimized for real operating work:
+The repository routes these task types:
 
 - Excel cleanup and workbook automation
 - Windows file and folder tasks
 - internal dashboards and browser tools
 - report generation from CSV or export data
-- safer handling of secrets, paths, commands, and destructive actions
+- handling rules for secrets, paths, commands, and destructive actions
 
-## Why It Exists
+## Purpose
 
 Most internal automation requests do not need an app framework.
 
-They need the smallest viable implementation that fits the user's actual environment, setup burden, and skill level. AI Builder exists to make those requests routable, consistent, and safer by default.
+AI Builder routes these requests according to the user's environment, setup burden, and skill level.
 
-It is especially useful when the person asking for help is close to spreadsheets, reports, folders, exports, and internal business processes rather than full-time software engineering.
+The documented audience includes people working with spreadsheets, reports, folders, exports, and internal business processes.
 
 ## Routing Model
 
@@ -444,11 +444,11 @@ The repository now includes:
 - evaluation fixture validation in [scripts/check_eval_cases.py](scripts/check_eval_cases.py)
 - GitHub Actions CI in [.github/workflows/ci.yml](.github/workflows/ci.yml)
 
-The goal is simple: make the skill testable as a routing system, not just readable as documentation.
+These files test routing behavior as well as documentation structure.
 
-## Who This Is For
+## Intended Users
 
-AI Builder is especially useful for:
+The documented use cases include:
 
 - operations and back-office teams
 - analysts working with Excel and CSV exports
